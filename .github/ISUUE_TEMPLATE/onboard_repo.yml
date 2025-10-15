@@ -1,0 +1,33 @@
+name: 🧑‍💻 Onboard my repository
+description: Add a repository to the Europe South community.
+title: "[Onboarding] Adding new repository"
+labels: ["onboarding"]
+body:
+  - type: input
+    id: repo-url
+    attributes:
+      label: Repository url
+      description: URL of you public repository
+    validations:
+      required: true
+  - type: input
+    id: repo-description
+    attributes:
+      label: Repository description
+      description: Short description of what your repository is about. Your chance to market your work 😉
+    validations:
+      required: true
+  - type: checkboxes
+    id: workload
+    attributes:
+      label: Related workloads
+      options:
+        - label: infra
+        - label: apps
+        - label: data
+        - label: security
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: "Thank you for contributing. As a best practice, make sure to include a license on your repository and to remove all the secrets from your code."
