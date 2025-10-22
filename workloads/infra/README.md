@@ -7,3 +7,4 @@
 | [agw-pep-custom-names](https://github.com/Azure/agw-pep-custom-names) | Azure Application Gateway: Private Endpoint Custom Name Solution Reference Architecture and Tests |
 | [terraform-azapi-nsgator](https://github.com/humanascode/terraform-azapi-nsgator) | NSGator automates Azure NSG rule management with intelligent priority assignment and duplicate detection. |
 | [GitHub-Enterprise-Server-Backup-Azure](https://github.com/humanascode/GitHub-Enterprise-Server-Backup-Azure) | Scripts and methods to configure a backup and restore process for GitHub Enterprise. |
+| [Azure-ALZ-Modern-Assessment](https://github.com/Iditbnaya/Azure-ALZ-Modern-Assessment) | A toolkit for assessing and modernizing Azure Landing Zones by evaluating design areas, identifying gaps, and aligning with the Microsoft Best Practices
