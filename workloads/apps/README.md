@@ -16,6 +16,7 @@
 | Repository | Description |
 |------------------|-------------|
 | [aihub](https://github.com/Azure/aihub) | AI Hub Executive Demo HandsOn | 
+| [audio transcriber (react)](https://github.com/Iditbnaya/audio-transcriber-react) | A minimal React + TypeScript app for uploading audio files and transcribing them to text using Azure OpenAI Speech-to-Text (gpt-4o-transcribe)
 
 ## Useful links
 
