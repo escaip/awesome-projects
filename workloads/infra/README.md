@@ -9,3 +9,4 @@
 | [GitHub-Enterprise-Server-Backup-Azure](https://github.com/humanascode/GitHub-Enterprise-Server-Backup-Azure) | Scripts and methods to configure a backup and restore process for GitHub Enterprise. |
 | [Azure-ALZ-Modern-Assessment](https://github.com/Iditbnaya/Azure-ALZ-Modern-Assessment) | A toolkit for assessing and modernizing Azure Landing Zones by evaluating design areas, identifying gaps, and aligning with the Microsoft Best Practices |
 | [Policy Exemption Automation](https://github.com/Iditbnaya/PolicyExamptAutomation) | Azure Security Center – Policy Exemption Automation |
+| [Azure Update Manager tools](https://github.com/helderpinto/AzureUpdateManagerTools) | Azure Update Manager tools – Staged Patching with Azure Automation |
