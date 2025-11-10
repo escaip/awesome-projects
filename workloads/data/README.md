@@ -2,6 +2,7 @@
 
 | Repository | Description |
 |------------------|-------------|
+| [Microsoft Fabric MCP Server](https://github.com/microsoft/mcp/tree/main/servers/Fabric.Mcp.Server) | Official MCP server that packages Microsoft Fabric's OpenAPI specifications, schema definitions, examples, and curated guidance into a single context layer for AI agents and developer tools. |
 
 ## Useful links
 
