@@ -2,6 +2,7 @@
 
 | Repository | Description |
 |------------------|-------------|
+| [Microsoft Fabric Samples](https://github.com/microsoft/fabric-samples) | This repository is designed to help you explore and learn about Microsoft Fabric. It provides hands-on examples and resources. Whether you're new to Microsoft Fabric or looking to deepen your understanding, you'll find valuable insights and tools here. |
 
 ## Useful links
 
