@@ -2,6 +2,7 @@
 
 | Repository | Description |
 |------------------|-------------|
+| [Fabric Tool-Box](https://github.com/microsoft/fabric-toolbox) | Official Fabric Tool-Box repository! |
 
 ## Useful links
 
