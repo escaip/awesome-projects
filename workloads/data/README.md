@@ -2,6 +2,7 @@
 
 | Repository | Description |
 |------------------|-------------|
+| [Semantic Link Labs](https://github.com/microsoft/semantic-link-labs) | Semantic Link Labs is a Python library designed for use in Microsoft Fabric notebooks. This library extends the capabilities of Semantic Link offering additional functionalities to seamlessly integrate and work alongside it. |
 
 ## Useful links
 
