@@ -2,6 +2,7 @@
 
 | Repository | Description |
 |------------------|-------------|
+| [fabric-cicd](https://github.com/microsoft/fabric-cicd) | fabric-cicd is a Python library designed for use with Microsoft Fabric workspaces. This library supports code-first Continuous Integration / Continuous Deployment (CI/CD) automations to seamlessly integrate Source Controlled workspaces into a deployment framework. The goal is to assist CI/CD developers who prefer not to interact directly with the Microsoft Fabric APIs. |
 
 ## Useful links
 
