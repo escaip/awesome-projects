@@ -10,3 +10,4 @@
 | [Azure-ALZ-Modern-Assessment](https://github.com/Iditbnaya/Azure-ALZ-Modern-Assessment) | A toolkit for assessing and modernizing Azure Landing Zones by evaluating design areas, identifying gaps, and aligning with the Microsoft Best Practices |
 | [Policy Exemption Automation](https://github.com/Iditbnaya/PolicyExamptAutomation) | Azure Security Center – Policy Exemption Automation |
 | [Azure Update Manager tools](https://github.com/helderpinto/AzureUpdateManagerTools) | Azure Update Manager tools – Staged Patching with Azure Automation |
+| [Service Retirements Agent](https://github.com/customer-success-microsoft/service-retirements-agent) | MCP server exposing Azure service retirements & deprecations from Cosmos DB. Pluggable ingestion (Azure Advisor + custom providers) |
