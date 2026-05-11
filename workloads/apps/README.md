@@ -17,6 +17,8 @@
 |------------------|-------------|
 | [aihub](https://github.com/Azure/aihub) | AI Hub Executive Demo HandsOn | 
 | [audio transcriber (react)](https://github.com/Iditbnaya/audio-transcriber-react) | A minimal React + TypeScript app for uploading audio files and transcribing them to text using Azure OpenAI Speech-to-Text (gpt-4o-transcribe)
+| [Github_Copilot-Obsidian--Second_Brain](https://github.com/benarch/Github_Copilot-Obsidian--Second_Brain) | Export your Microsoft OneNote notebooks to Markdown, power them with Obsidian,
+and wire them into GitHub Copilot CLI, Claude Code, and any AI assistant as a queryable RAG graph database. |
 
 ## Useful links
 
