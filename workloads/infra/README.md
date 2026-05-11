@@ -11,3 +11,4 @@
 | [Policy Exemption Automation](https://github.com/Iditbnaya/PolicyExamptAutomation) | Azure Security Center – Policy Exemption Automation |
 | [Azure Update Manager tools](https://github.com/helderpinto/AzureUpdateManagerTools) | Azure Update Manager tools – Staged Patching with Azure Automation |
 | [Service Retirements Agent](https://github.com/customer-success-microsoft/service-retirements-agent) | MCP server exposing Azure service retirements & deprecations from Cosmos DB. Pluggable ingestion (Azure Advisor + custom providers) |
+| [Azure RBAC Controller](https://github.com/humanascode/azure-rbac-controller) | Manage Azure RBAC role assignments as code using Terraform, with automated drift detection via GitHub Actions |
