@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Europe South — Awesome Projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:           #07090d;
+      --surface:      #0d1117;
+      --surface-2:    #111820;
+      --surface-3:    #161e28;
+      --border:       rgba(255,255,255,0.07);
+      --border-md:    rgba(255,255,255,0.12);
+      --border-lg:    rgba(255,255,255,0.18);
+      --accent:       #00d4aa;
+      --accent-dim:   rgba(0,212,170,0.12);
+      --apps:         #4da6ff;
+      --apps-dim:     rgba(77,166,255,0.12);
+      --infra:        #00d4aa;
+      --infra-dim:    rgba(0,212,170,0.12);
+      --data:         #f5a623;
+      --data-dim:     rgba(245,166,35,0.12);
+      --security:     #ff6b6b;
+      --security-dim: rgba(255,107,107,0.12);
+      --text:         #e4edf6;
+      --text-2:       #8b9eb5;
+      --text-3:       #4a5f74;
+      --ff-display:   'Syne', sans-serif;
+      --ff-body:      'DM Sans', sans-serif;
+      --ff-mono:      'Fira Code', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--ff-body);
+      font-size: 15px;
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Dot-grid texture ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.045) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Ambient glow orbs ── */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .orb-1 {
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(0,212,170,0.07) 0%, transparent 70%);
+      top: -200px; right: -150px;
+      animation: float1 14s ease-in-out infinite;
+    }
+    .orb-2 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(245,166,35,0.06) 0%, transparent 70%);
+      bottom: 5%; left: -100px;
+      animation: float2 18s ease-in-out infinite;
+    }
+    @keyframes float1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-40px,35px)} }
+    @keyframes float2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(35px,-25px)} }
+
+    /* ════════════════════════════════════════════
+       LAYOUT WRAPPER
+    ════════════════════════════════════════════ */
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    /* ════════════════════════════════════════════
+       HEADER
+    ════════════════════════════════════════════ */
+    header { padding-top: 56px; padding-bottom: 52px; }
+
+    .eyebrow {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .eyebrow-line {
+      display: inline-block;
+      width: 28px; height: 1px;
+      background: var(--accent);
+    }
+
+    h1 {
+      font-family: var(--ff-display);
+      font-size: clamp(52px, 7.5vw, 104px);
+      font-weight: 800;
+      line-height: 0.9;
+      letter-spacing: -0.025em;
+      margin-bottom: 32px;
+    }
+    h1 .w1 { color: var(--text); display: block; }
+    h1 .w2 { color: var(--accent); display: block; }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .hero-desc {
+      font-size: 16px;
+      color: var(--text-2);
+      line-height: 1.75;
+      max-width: 520px;
+    }
+
+    /* Stats panel */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid var(--border-md);
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--surface);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+    .stat + .stat { border-left: 1px solid var(--border); }
+    .stat {
+      padding: 22px 20px 20px;
+      text-align: center;
+    }
+    .stat-num {
+      display: block;
+      font-family: var(--ff-display);
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--text);
+    }
+    .stat-lbl {
+      display: block;
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-top: 8px;
+    }
+    .stat-dot {
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      margin-right: 5px;
+      vertical-align: middle;
+      position: relative;
+      top: -1px;
+    }
+    .stat:nth-child(1) .stat-dot { background: var(--apps); }
+    .stat:nth-child(2) .stat-dot { background: var(--infra); }
+    .stat:nth-child(3) .stat-dot { background: var(--data); }
+
+    /* ════════════════════════════════════════════
+       FILTER NAV
+    ════════════════════════════════════════════ */
+    .filter-bar {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: rgba(7,9,13,0.8);
+      backdrop-filter: blur(16px);
+      position: sticky;
+      top: 0;
+    }
+    .filter-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 0 48px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      height: 60px;
+    }
+    .tab {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--text-2);
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.18s ease;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      white-space: nowrap;
+    }
+    .tab:hover { color: var(--text); background: var(--surface); border-color: var(--border); }
+
+    .tab.active[data-filter="all"]      { background: var(--text);     color: var(--bg);  border-color: transparent; }
+    .tab.active[data-filter="apps"]     { background: var(--apps);     color: #fff;       border-color: transparent; }
+    .tab.active[data-filter="infra"]    { background: var(--infra);    color: var(--bg);  border-color: transparent; }
+    .tab.active[data-filter="data"]     { background: var(--data);     color: var(--bg);  border-color: transparent; }
+    .tab.active[data-filter="security"] { background: var(--security); color: #fff;       border-color: transparent; }
+
+    .tab-n {
+      font-size: 10px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.1);
+    }
+    .tab.active .tab-n { background: rgba(0,0,0,0.18); }
+
+    .search-wrap { margin-left: auto; }
+    .search {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: var(--ff-mono);
+      font-size: 12px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      outline: none;
+      width: 230px;
+      transition: all 0.18s ease;
+    }
+    .search::placeholder { color: var(--text-3); }
+    .search:focus { border-color: var(--border-md); background: var(--surface-2); }
+
+    /* ════════════════════════════════════════════
+       MAIN CONTENT
+    ════════════════════════════════════════════ */
+    main { position: relative; z-index: 1; padding: 40px 0 96px; }
+
+    .section-label {
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 44px 0 20px;
+    }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    /* ── Cards ── */
+    .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      padding: 22px 22px 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+      animation: cardIn 0.45s cubic-bezier(0.22,1,0.36,1) both;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 18%; bottom: 18%;
+      width: 3px;
+      border-radius: 0 3px 3px 0;
+      transition: top 0.22s ease, bottom 0.22s ease;
+    }
+    .card[data-cat="apps"]::before     { background: var(--apps); }
+    .card[data-cat="infra"]::before    { background: var(--infra); }
+    .card[data-cat="data"]::before     { background: var(--data); }
+    .card[data-cat="security"]::before { background: var(--security); }
+
+    .card:hover {
+      background: var(--surface-2);
+      transform: translateY(-4px);
+    }
+    .card:hover::before { top: 12%; bottom: 12%; }
+
+    .card[data-cat="apps"]:hover     { box-shadow: 0 16px 48px rgba(0,0,0,.4), 0 0 0 1px rgba(77,166,255,.22); border-color: rgba(77,166,255,.2); }
+    .card[data-cat="infra"]:hover    { box-shadow: 0 16px 48px rgba(0,0,0,.4), 0 0 0 1px rgba(0,212,170,.22); border-color: rgba(0,212,170,.2); }
+    .card[data-cat="data"]:hover     { box-shadow: 0 16px 48px rgba(0,0,0,.4), 0 0 0 1px rgba(245,166,35,.22); border-color: rgba(245,166,35,.2); }
+    .card[data-cat="security"]:hover { box-shadow: 0 16px 48px rgba(0,0,0,.4), 0 0 0 1px rgba(255,107,107,.22); border-color: rgba(255,107,107,.2); }
+
+    .card-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge {
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 5px;
+      font-weight: 500;
+    }
+    .card[data-cat="apps"]     .badge { background: var(--apps-dim);     color: var(--apps); }
+    .card[data-cat="infra"]    .badge { background: var(--infra-dim);    color: var(--infra); }
+    .card[data-cat="data"]     .badge { background: var(--data-dim);     color: var(--data); }
+    .card[data-cat="security"] .badge { background: var(--security-dim); color: var(--security); }
+
+    .badge-private {
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 5px;
+      background: rgba(255,255,255,0.05);
+      color: var(--text-3);
+      border: 1px solid var(--border);
+    }
+
+    .card-arrow {
+      margin-left: auto;
+      font-size: 17px;
+      color: var(--text-3);
+      transition: color 0.18s ease, transform 0.18s ease;
+      line-height: 1;
+    }
+    .card:hover .card-arrow { color: var(--text); transform: translate(3px,-3px); }
+
+    .card-title {
+      font-family: var(--ff-display);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-2);
+      line-height: 1.65;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      flex: 1;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 2px;
+    }
+    .tag {
+      font-family: var(--ff-mono);
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.04);
+      color: var(--text-3);
+      border: 1px solid var(--border);
+    }
+
+    @keyframes cardIn {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .card:nth-child(1)  { animation-delay:  0ms }
+    .card:nth-child(2)  { animation-delay: 40ms }
+    .card:nth-child(3)  { animation-delay: 80ms }
+    .card:nth-child(4)  { animation-delay:120ms }
+    .card:nth-child(5)  { animation-delay:160ms }
+    .card:nth-child(6)  { animation-delay:200ms }
+    .card:nth-child(7)  { animation-delay:240ms }
+    .card:nth-child(8)  { animation-delay:280ms }
+    .card:nth-child(9)  { animation-delay:320ms }
+    .card:nth-child(10) { animation-delay:360ms }
+
+    .card.hidden { display: none !important; }
+    .section-label.hidden { display: none !important; }
+    .grid.hidden { display: none !important; }
+
+    /* Empty state */
+    .empty-state {
+      display: none;
+      padding: 80px 0;
+      text-align: center;
+    }
+    .empty-state.visible { display: block; }
+    .empty-icon { font-size: 40px; margin-bottom: 16px; }
+    .empty-msg {
+      font-family: var(--ff-mono);
+      font-size: 13px;
+      color: var(--text-3);
+      letter-spacing: 0.05em;
+    }
+
+    /* ════════════════════════════════════════════
+       FOOTER
+    ════════════════════════════════════════════ */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+    }
+    .footer-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .footer-brand {
+      font-family: var(--ff-display);
+      font-weight: 700;
+      font-size: 18px;
+    }
+    .footer-brand em { color: var(--accent); font-style: normal; }
+    .footer-sub {
+      font-size: 13px;
+      color: var(--text-3);
+      margin-top: 3px;
+      font-family: var(--ff-mono);
+      letter-spacing: 0.05em;
+    }
+    .footer-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 22px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      text-decoration: none;
+      border-radius: 8px;
+      font-family: var(--ff-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: all 0.18s ease;
+    }
+    .footer-cta:hover { background: var(--accent); color: var(--bg); }
+
+    /* ════════════════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════════════════ */
+    @media (max-width: 1100px) {
+      .grid { grid-template-columns: repeat(2,1fr); }
+      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media (max-width: 700px) {
+      .container, .filter-inner, .footer-inner { padding-left: 20px; padding-right: 20px; }
+      .grid { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .filter-inner { flex-wrap: wrap; height: auto; padding-top: 12px; padding-bottom: 12px; }
+      .search-wrap { margin-left: 0; width: 100%; }
+      .search { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="container">
+    <div class="eyebrow">
+      <span class="eyebrow-line"></span>
+      Europe South · Community Showcase
+    </div>
+    <h1>
+      <span class="w1">Awesome</span>
+      <span class="w2">Projects</span>
+    </h1>
+    <div class="hero-grid">
+      <p class="hero-desc">
+        A curated collection of innovative, community-driven repositories from the
+        Europe South region — spanning application development, infrastructure
+        automation, and data engineering. Inspiration and resources for developers,
+        architects, and engineers.
+      </p>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-num" id="s-apps">0</span>
+          <span class="stat-lbl"><span class="stat-dot"></span>Apps</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" id="s-infra">0</span>
+          <span class="stat-lbl"><span class="stat-dot"></span>Infra</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" id="s-data">0</span>
+          <span class="stat-lbl"><span class="stat-dot"></span>Data</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ FILTER BAR ═══ -->
+  <div class="filter-bar">
+    <div class="filter-inner">
+      <button class="tab active" data-filter="all">All <span class="tab-n">24</span></button>
+      <button class="tab" data-filter="apps">Apps <span class="tab-n">9</span></button>
+      <button class="tab" data-filter="infra">Infra <span class="tab-n">10</span></button>
+      <button class="tab" data-filter="data">Data <span class="tab-n">5</span></button>
+      <div class="search-wrap">
+        <input class="search" id="searchInput" type="text" placeholder="search projects…" autocomplete="off">
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ MAIN ═══ -->
+  <main>
+    <div class="container">
+
+      <!-- ── APPS / GitHub Related ── -->
+      <div class="section-label" id="lbl-apps-gh" data-group="apps">GitHub Related</div>
+      <div class="grid" id="grid-apps-gh">
+
+        <a class="card" data-cat="apps" href="https://github.com/microsoft/CoPilotHackathon" target="_blank" rel="noopener">
+          <div class="card-head"><span class="badge">Apps</span><span class="card-arrow">↗</span></div>
+          <h3 class="card-title">GitHub Copilot Hackathon</h3>
+          <p class="card-desc">Hands-on hackathon material for GitHub Copilot across Node.js, Java, Python, and .NET. The ideal starting point for teams embarking on AI-assisted development.</p>
+          <div class="tags"><span class="tag">copilot</span><span class="tag">nodejs</span><span class="tag">java</span><span class="tag">python</span><span class="tag">.net</span></div>
+        </a>
+
+        <a class="card" data-cat="apps" href="https://github.com/microsoft/github-copilot-workshops-trainer" target="_blank" rel="noopener">
+          <div class="card-head"><span class="badge">Apps</span><span class="badge-private">🔒 Private</span><span class="card-arrow">↗</span></div>
+          <h3 class="card-title">Copilot Adoption Plan — Trainer</h3>
+          <p class="card-desc">Trainer resource repository for the GitHub Copilot Adoption Plan. Provides facilitator guides, slide decks, and supplemental materials for running Copilot workshops.</p>
+          <div class="tags"><span class="tag">copilot</span><span class="tag">training</span><span class="tag">adoption</span></div>
+        </a>
+
+        <a class="card" data-cat="apps" href="https://github.com/microsoft/github-copilot-workshops-labs" target="_blank" rel="noopener">
+          <div class="card-head"><span class="badge">Apps</span><span class="card-arrow">↗</span></div>
+          <h3 class="card-title">Copilot Adoption Plan — Labs</h3>
+          <p class="card-desc">Lab exercises for the GitHub Copilot Adoption Plan. Practical workshops guiding teams through real-world Copilot usage patterns and best practices.</p>
+          <div class="tags"><span class="tag">copilot</span><span class="tag">workshops</span><span class="tag">labs</span></div>
+        </a>
+
+        <a class="card" data-cat="apps" href="https://github.com/microsoft/github-copilot-workshops-full" target="_blank" rel="noopener">
+          <div class="card-head"><span class="badge">Apps</span><span class="card-arrow">↗</span></div>
+          <h3 class="card-title">Copilot Adoption Plan — Full Solution</h3>
+          <p class="card-desc">Complete reference solution for the GitHub Copilot Adoption Plan, providing the full end-to-end workshop experience with every exercise solved and annotated.</p>
+          <div class="tags"><span class="tag">copilot</span><span class="tag">adoption</span><span class="tag">reference</span></div>
+        </a>
+
+        <a class="card" data-cat="apps" href="https://github.com/lgiuliani80/githubapp-gettoken-net" target="_blank" rel="noopener">
+          <div class="card-head"><span class="badge">Apps</span><span class="card-arrow">↗</span></div>
+          <h3 class="card-title">GitHub Token Server</h3>
+          <p class="card-desc">Lightweight ASP.NET Core service that obtains GitHub App installation tokens on demand. Simplifies GitHub App auth integration into CI/CD pipelines and applications.</p>
+          <div class="tags"><span class="tag">aspnet</span><span class="tag">auth</span><span class="tag">github-app</span><span class="tag">cicd</span></div>
+        </a>
+
+        <a class="card" data-cat="apps" href="https://github.com/olivomarco/action-count-users-by-org" target="_blank" rel="noopener">
+          <div class="card-head"><span class="badge">Apps</span><span class="card-arrow">↗</span></div>
+          <h3 class="card-title">Enterprise User Reporting</h3>
+          <p class="card-desc">Scheduled GitHub Actions pipeline that generates a daily report of consumed GitHub Enterprise licenses — when native reporting isn't enough.</p>
+          <div class="tags"><span class="tag">github-actions</span><span class="tag">reporting</span><span class="tag">enterprise</span><span class="tag">licenses</span></div>
+        </a>
+
+      </div>
+
+      <!-- ── APPS / AI Related ── -->
+      <div class="section-label" id="lbl-apps-ai" data-group="apps">AI Related</div>
+      <div class="grid" id="grid-apps-ai">
+
+        <a class="card" data-cat="apps" href="https://github.com/Azure/aihub" target="_blank" rel="noopener">
+          <div class="card-head"><span class="badge">Apps</span><span class="card-arrow">↗</span></div>
+          <h3 class="card-title">AI Hub</h3>
+          <p class="card-desc">Executive demo and hands-on experience hub for Azure AI capabilities. Showcases the breadth of Azure AI services in an interactive, engaging format for any audience.</p>
+          <div class="tags"><span class="tag">azure</span><span class="tag">ai</span><span class="tag">demo</span></div>
+        </a>
+
+        <a class="card" data-cat="apps" href="https://github.com/Iditbnaya/audio-transcriber-react" target="_blank" rel="noopener">
+          <div class="card-head"><span class="badge">Apps</span><span class="card-arrow">↗</span></div>
+          <h3 class="card-title">Audio Transcriber</h3>
+          <p class="card-desc">Minimal React + TypeScript app for uploading audio files and transcribing them using Azure OpenAI Speech-to-Text (gpt-4o-transcribe). Clean, focused, production-ready.</p>
+          <div class="tags"><span class="tag">react</span><span class="tag">typescript</span><span class="tag">azure-openai</span><span class="tag">speech</span></div>
+        </a>
+
+        <a class="card" data-cat="apps" href="https://github.com/benarch/Github_Copilot-Obsidian--Second_Brain" target="_blank" rel="noopener">
+          <div class="card-head"><span class="badge">Apps</span><span class="card-arrow">↗</span></div>
+          <h3 class="card-title">Copilot · Obsidian Second Brain</h3>
+          <p class="card-desc">Export OneNote notebooks to Markdown, power them with Obsidian, and wire them into Copilot CLI and Claude Code as a queryable RAG graph knowledge database.</p>
+          <div class="tags"><span class="tag">copilot</span><span class="tag">obsidian</span><span class="tag">rag</span><span class="tag">knowledge-graph</span></div>
+        </a>
+
+      </div>
+
+      <!-- ── INFRA ── -->
+      <div class="section-label" id="lbl-infra" data-group="infra">Infrastructure</div>
+      <div class="grid" id="grid-infra">
+
+        <a class="card" data-cat="infra" href="https://github.com/Azure/azqr" target="_blank" rel="noopener">
+          <div class="card-head"><span class="badge">Infra</span><span class="card-arrow">↗</span></div>
+          <h3 class="card-title">Azure Quick Review</h3>
+          <p class="card-desc">Rapidly assess your Azure environment with automated checks for adherence to best practices and security guidelines. Get actionable insights across your entire subscription.</p>
+          <div class="tags"><span class="tag">azure</span><span class="tag">compliance</span><span class="tag">security</span><span class="tag">cli</span></div>
+        </a>
+
+        <a class="card" data-cat="infra" href="https://github.com/microsoft/finops-toolkit" target="_blank" rel="noopener">
+          <div class="card-head"><span class="badge">Infra</span><span class="card-arrow">↗</span></div>
+          <h3 class="card-title">FinOps Toolkit</h3>
+          <p class="card-desc">Tools and resources to adopt and implement FinOps capabilities that automate and extend cost management and governance across the Microsoft Cloud.</p>
+          <div class="tags"><span class="tag">finops</span><span class="tag">azure</span><span class="tag">cost-management</span></div>
+        </a>
+
+        <a class="card" data-cat="infra" href="https://github.com/Azure/agw-pep-custom-names" target="_blank" rel="noopener">
+          <div class="card-head"><span class="badge">Infra</span><span class="card-arrow">↗</span></div>
+          <h3 class="card-title">AGW Private Endpoint Names</h3>
+          <p class="card-desc">Reference architecture and tests for Azure Application Gateway Private Endpoint with custom DNS name solutions. Solves a real enterprise networking gap.</p>
+          <div class="tags"><span class="tag">azure</span><span class="tag">app-gateway</span><span class="tag">private-endpoint</span><span class="tag">dns</span></div>
+        </a>
+
+        <a class="card" data-cat="infra" href="https://github.com/humanascode/terraform-azapi-nsgator" target="_blank" rel="noopener">
+          <div class="card-head"><span class="badge">Infra</span><span class="card-arrow">↗</span></div>
+          <h3 class="card-title">NSGator</h3>
+          <p class="card-desc">Automates Azure NSG rule management with intelligent priority assignment and duplicate detection. Manage network security group rules as code with Terraform.</p>
+          <div class="tags"><span class="tag">terraform</span><span class="tag">nsg</span><span class="tag">azure</span><span class="tag">networking</span></div>
+        </a>
+
+        <a class="card" data-cat="infra" href="https://github.com/humanascode/GitHub-Enterprise-Server-Backup-Azure" target="_blank" rel="noopener">
+          <div class="card-head"><span class="badge">Infra</span><span class="card-arrow">↗</span></div>
+          <h3 class="card-title">GHES Backup on Azure</h3>
+          <p class="card-desc">Scripts and methods to configure a robust backup and restore process for GitHub Enterprise Server, leveraging Azure storage and native automation capabilities.</p>
+          <div class="tags"><span class="tag">ghes</span><span class="tag">backup</span><span class="tag">azure</span><span class="tag">dr</span></div>
+        </a>
+
+        <a class="card" data-cat="infra" href="https://github.com/Iditbnaya/Azure-ALZ-Modern-Assessment" target="_blank" rel="noopener">
+          <div class="card-head"><span class="badge">Infra</span><span class="card-arrow">↗</span></div>
+          <h3 class="card-title">ALZ Modern Assessment</h3>
+          <p class="card-desc">Toolkit for assessing and modernizing Azure Landing Zones. Evaluates design areas, identifies gaps, and aligns with the Microsoft Cloud Adoption Framework best practices.</p>
+          <div class="tags"><span class="tag">alz</span><span class="tag">landing-zone</span><span class="tag">azure</span><span class="tag">caf</span></div>
+        </a>
+
+        <a class="card" data-cat="infra" href="https://github.com/Iditbnaya/PolicyExamptAutomation" target="_blank" rel="noopener">
+          <div class="card-head"><span class="badge">Infra</span><span class="card-arrow">↗</span></div>
+          <h3 class="card-title">Policy Exemption Automation</h3>
+          <p class="card-desc">Azure Security Center policy exemption automation. Streamlines management of Azure Policy exemptions at scale across your organization with full audit trail.</p>
+          <div class="tags"><span class="tag">azure-policy</span><span class="tag">security-center</span><span class="tag">automation</span></div>
+        </a>
+
+        <a class="card" data-cat="infra" href="https://github.com/helderpinto/AzureUpdateManagerTools" target="_blank" rel="noopener">
+          <div class="card-head"><span class="badge">Infra</span><span class="card-arrow">↗</span></div>
+          <h3 class="card-title">Azure Update Manager Tools</h3>
+          <p class="card-desc">Tools for staged OS patching with Azure Update Manager and Azure Automation. Orchestrate updates across your entire fleet with fine-grained control over rollout rings.</p>
+          <div class="tags"><span class="tag">azure</span><span class="tag">patching</span><span class="tag">automation</span><span class="tag">updates</span></div>
+        </a>
+
+        <a class="card" data-cat="infra" href="https://github.com/customer-success-microsoft/service-retirements-agent" target="_blank" rel="noopener">
+          <div class="card-head"><span class="badge">Infra</span><span class="card-arrow">↗</span></div>
+          <h3 class="card-title">Service Retirements Agent</h3>
+          <p class="card-desc">MCP server exposing Azure service retirements and deprecations from Cosmos DB. Pluggable ingestion from Azure Advisor and custom providers for proactive planning.</p>
+          <div class="tags"><span class="tag">mcp</span><span class="tag">azure</span><span class="tag">retirements</span><span class="tag">cosmos-db</span></div>
+        </a>
+
+        <a class="card" data-cat="infra" href="https://github.com/humanascode/azure-rbac-controller" target="_blank" rel="noopener">
+          <div class="card-head"><span class="badge">Infra</span><span class="card-arrow">↗</span></div>
+          <h3 class="card-title">Azure RBAC Controller</h3>
+          <p class="card-desc">Manage Azure RBAC role assignments as code using Terraform, with automated drift detection via GitHub Actions. Keep your permissions consistent, auditable, and version-controlled.</p>
+          <div class="tags"><span class="tag">terraform</span><span class="tag">rbac</span><span class="tag">github-actions</span><span class="tag">drift-detection</span></div>
+        </a>
+
+      </div>
+
+      <!-- ── DATA ── -->
+      <div class="section-label" id="lbl-data" data-group="data">Data Engineering</div>
+      <div class="grid" id="grid-data">
+
+        <a class="card" data-cat="data" href="https://github.com/microsoft/fabric-samples" target="_blank" rel="noopener">
+          <div class="card-head"><span class="badge">Data</span><span class="card-arrow">↗</span></div>
+          <h3 class="card-title">Microsoft Fabric Samples</h3>
+          <p class="card-desc">Official hands-on examples and resources for Microsoft Fabric. Whether you're new or deepening your expertise, this is your go-to learning and reference launchpad.</p>
+          <div class="tags"><span class="tag">fabric</span><span class="tag">microsoft</span><span class="tag">samples</span><span class="tag">learning</span></div>
+        </a>
+
+        <a class="card" data-cat="data" href="https://github.com/microsoft/fabric-toolbox" target="_blank" rel="noopener">
+          <div class="card-head"><span class="badge">Data</span><span class="card-arrow">↗</span></div>
+          <h3 class="card-title">Fabric Toolbox</h3>
+          <p class="card-desc">Official Microsoft Fabric Toolbox — a growing collection of utilities, accelerators, and tools to enhance your Fabric development workflow and operational experience.</p>
+          <div class="tags"><span class="tag">fabric</span><span class="tag">tools</span><span class="tag">accelerators</span></div>
+        </a>
+
+        <a class="card" data-cat="data" href="https://github.com/microsoft/fabric-cicd" target="_blank" rel="noopener">
+          <div class="card-head"><span class="badge">Data</span><span class="card-arrow">↗</span></div>
+          <h3 class="card-title">fabric-cicd</h3>
+          <p class="card-desc">Python library for code-first CI/CD automation of Microsoft Fabric workspaces. Seamlessly integrate source-controlled workspaces into your deployment pipelines without touching Fabric APIs directly.</p>
+          <div class="tags"><span class="tag">fabric</span><span class="tag">cicd</span><span class="tag">python</span><span class="tag">automation</span></div>
+        </a>
+
+        <a class="card" data-cat="data" href="https://github.com/microsoft/semantic-link-labs" target="_blank" rel="noopener">
+          <div class="card-head"><span class="badge">Data</span><span class="card-arrow">↗</span></div>
+          <h3 class="card-title">Semantic Link Labs</h3>
+          <p class="card-desc">Python library for Microsoft Fabric notebooks that extends Semantic Link capabilities. Seamlessly integrates semantic models with Fabric's full analytical horsepower.</p>
+          <div class="tags"><span class="tag">fabric</span><span class="tag">python</span><span class="tag">semantic-link</span><span class="tag">notebooks</span></div>
+        </a>
+
+        <a class="card" data-cat="data" href="https://github.com/microsoft/mcp/tree/main/servers/Fabric.Mcp.Server" target="_blank" rel="noopener">
+          <div class="card-head"><span class="badge">Data</span><span class="card-arrow">↗</span></div>
+          <h3 class="card-title">Fabric MCP Server</h3>
+          <p class="card-desc">Official MCP server packaging Fabric's OpenAPI specs, schema definitions, examples, and curated guidance as a unified context layer for AI agents and developer tools.</p>
+          <div class="tags"><span class="tag">fabric</span><span class="tag">mcp</span><span class="tag">ai-agents</span><span class="tag">openapi</span></div>
+        </a>
+
+      </div>
+
+      <!-- Empty state -->
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">◎</div>
+        <div class="empty-msg">No projects match your search</div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Europe South <em>·</em> Awesome Projects</div>
+        <div class="footer-sub">// community-curated · europe-south</div>
+      </div>
+      <a class="footer-cta" href="https://github.com/escaip/awesome-projects/issues/new?template=onboard_repo.yml" target="_blank" rel="noopener">
+        ↑ Submit your repo
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // ── Count-up animation ──────────────────────────────────────────────
+    function countUp(el, target, duration) {
+      const start = performance.now();
+      (function tick(now) {
+        const p = Math.min((now - start) / duration, 1);
+        const e = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(e * target);
+        if (p < 1) requestAnimationFrame(tick);
+      })(start);
+    }
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        countUp(document.getElementById('s-apps'),  9,  750);
+        countUp(document.getElementById('s-infra'), 10, 900);
+        countUp(document.getElementById('s-data'),  5,  600);
+      }, 250);
+    });
+
+    // ── Filter + Search ─────────────────────────────────────────────────
+    const tabs   = document.querySelectorAll('.tab');
+    const cards  = document.querySelectorAll('.card');
+    const grids  = document.querySelectorAll('.grid');
+    const labels = document.querySelectorAll('.section-label');
+    const empty  = document.getElementById('emptyState');
+    let   active = 'all';
+
+    function applyFilter() {
+      const q = document.getElementById('searchInput').value.toLowerCase().trim();
+
+      cards.forEach(card => {
+        const cat   = card.dataset.cat;
+        const text  = card.innerText.toLowerCase();
+        const byTab = active === 'all' || cat === active;
+        const byQ   = !q || text.includes(q);
+        card.classList.toggle('hidden', !(byTab && byQ));
+      });
+
+      // Hide empty section labels + grids
+      grids.forEach(grid => {
+        const visible = grid.querySelectorAll('.card:not(.hidden)').length > 0;
+        grid.classList.toggle('hidden', !visible);
+        const prev = grid.previousElementSibling;
+        if (prev && prev.classList.contains('section-label')) {
+          prev.classList.toggle('hidden', !visible);
+        }
+      });
+
+      // Show/hide empty state
+      const totalVisible = document.querySelectorAll('.card:not(.hidden)').length;
+      empty.classList.toggle('visible', totalVisible === 0);
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        active = tab.dataset.filter;
+        applyFilter();
+      });
+    });
+
+    document.getElementById('searchInput').addEventListener('input', applyFilter);
+  </script>
+</body>
+</html>
