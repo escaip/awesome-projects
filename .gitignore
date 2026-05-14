@@ -1,3 +1,6 @@
 
 # APM dependencies
 apm_modules/
+
+# Generated files
+web/repositories.json

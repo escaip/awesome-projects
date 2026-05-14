@@ -4,15 +4,11 @@ Europe South - Awesome Projects is a curated collection of innovative, impactful
 
 [![Submit your repo here](https://img.shields.io/badge/Submit%20your%20repo%20here📂-<-blue)](https://github.com/escaip/awesome-projects/issues/new?template=onboard_repo.yml)
 
-## Workload Overviews
+## Browse Projects
 
-- [Application Innovation repositories](workloads/apps/README.md)
+Explore the full catalogue at **[escaip.github.io/awesome-projects](https://escaip.github.io/awesome-projects/)** — filter by category, search by keyword, and discover repositories across apps, infrastructure, data, and security.
 
-- [Infrastructure repositories](workloads/infra/README.md)
-
-- [Data repositories](workloads/data/README.md)
-
-- [Security repositories](workloads/security/README.md)
+> To add or update a repository, edit [`workloads/repositories.yaml`](workloads/repositories.yaml).
 
 ----
 

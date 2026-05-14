@@ -1,0 +1,288 @@
+repositories:
+
+  # ── APPS · GitHub Related ──────────────────────────────────────────────────
+  - name: "GitHub Copilot Hackathon"
+    url: "https://github.com/microsoft/CoPilotHackathon"
+    description: "GitHub Copilot Hackathon for Nodejs, JAVA, Python & .NET"
+    categories:
+      - apps
+    group: "GitHub Related"
+    tags:
+      - github
+      - copilot
+      - hackathon
+
+  - name: "GitHub Copilot Adoption Plan - Trainer"
+    url: "https://github.com/microsoft/github-copilot-workshops-trainer"
+    description: "Trainer resource repository for the GitHub Copilot Adoption Plan. Provides facilitator guides, slide decks, and supplemental materials for running Copilot workshops."
+    categories:
+      - apps
+    group: "GitHub Related"
+    tags:
+      - github
+      - copilot
+      - workshop
+
+  - name: "GitHub Copilot Adoption Plan - Labs"
+    url: "https://github.com/microsoft/github-copilot-workshops-labs"
+    description: "GitHub Copilot Adoption Plan: Labs repository — hands-on exercises for learners following the Copilot adoption curriculum."
+    categories:
+      - apps
+    group: "GitHub Related"
+    tags:
+      - github
+      - copilot
+      - labs
+
+  - name: "GitHub Copilot Adoption Plan - Full Solution"
+    url: "https://github.com/microsoft/github-copilot-workshops-full"
+    description: "GitHub Copilot Adoption Plan: Full solution repository — complete reference implementation accompanying the Copilot adoption curriculum."
+    categories:
+      - apps
+    group: "GitHub Related"
+    tags:
+      - github
+      - copilot
+      - solution
+
+  - name: "GitHub Token Server"
+    url: "https://github.com/lgiuliani80/githubapp-gettoken-net"
+    description: "A lightweight ASP.NET Core service that facilitates obtaining authentication tokens for GitHub App installations. Easy to integrate into CI/CD pipelines or other applications."
+    categories:
+      - apps
+    group: "GitHub Related"
+    tags:
+      - aspnet
+      - auth
+      - github-app
+      - cicd
+
+  - name: "Enterprise User Reporting"
+    url: "https://github.com/olivomarco/action-count-users-by-org"
+    description: "Scheduled GitHub Actions pipeline that generates a daily report of consumed GitHub Enterprise licenses — when native reporting isn't enough."
+    categories:
+      - apps
+    group: "GitHub Related"
+    tags:
+      - github-actions
+      - reporting
+      - enterprise
+      - licenses
+
+  # ── APPS · AI Related ─────────────────────────────────────────────────────
+  - name: "AI Hub"
+    url: "https://github.com/Azure/aihub"
+    description: "AI Hub Executive Demo HandsOn — a curated set of Azure AI demonstrations and hands-on labs for showcasing AI capabilities to executives and decision-makers."
+    categories:
+      - apps
+    group: "AI Related"
+    tags:
+      - azure
+      - ai
+      - demo
+
+  - name: "Audio Transcriber (React)"
+    url: "https://github.com/Iditbnaya/audio-transcriber-react"
+    description: "A minimal React + TypeScript app for uploading audio files and transcribing them to text using Azure OpenAI Speech-to-Text (gpt-4o-transcribe)."
+    categories:
+      - apps
+    group: "AI Related"
+    tags:
+      - react
+      - typescript
+      - azure-openai
+      - speech-to-text
+
+  - name: "GitHub Copilot · Obsidian Second Brain"
+    url: "https://github.com/benarch/Github_Copilot-Obsidian--Second_Brain"
+    description: "Export OneNote notebooks to Markdown, power them with Obsidian, and wire them into Copilot CLI and Claude Code as a queryable RAG graph knowledge database."
+    categories:
+      - apps
+    group: "AI Related"
+    tags:
+      - obsidian
+      - rag
+      - copilot
+      - knowledge-graph
+
+  # ── INFRA ─────────────────────────────────────────────────────────────────
+  - name: "Azure Quick Review"
+    url: "https://github.com/Azure/azqr"
+    description: "Rapidly assess your Azure environment with automated checks for adherence to best practices and security guidelines. Get actionable insights across your entire subscription."
+    categories:
+      - infra
+      - security
+    group: "Infrastructure"
+    tags:
+      - azure
+      - compliance
+      - security
+      - cli
+
+  - name: "FinOps Toolkit"
+    url: "https://github.com/microsoft/finops-toolkit"
+    description: "Tools and resources to adopt and implement FinOps capabilities that automate and extend cost management and governance across the Microsoft Cloud."
+    categories:
+      - infra
+    group: "Infrastructure"
+    tags:
+      - finops
+      - azure
+      - cost-management
+
+  - name: "AGW Private Endpoint Names"
+    url: "https://github.com/Azure/agw-pep-custom-names"
+    description: "Reference architecture and tests for Azure Application Gateway Private Endpoint with custom DNS name solutions. Solves a real enterprise networking gap."
+    categories:
+      - infra
+    group: "Infrastructure"
+    tags:
+      - azure
+      - app-gateway
+      - private-endpoint
+      - dns
+
+  - name: "NSGator"
+    url: "https://github.com/humanascode/terraform-azapi-nsgator"
+    description: "Automates Azure NSG rule management with intelligent priority assignment and duplicate detection. Manage network security group rules as code with Terraform."
+    categories:
+      - infra
+    group: "Infrastructure"
+    tags:
+      - terraform
+      - nsg
+      - azure
+      - networking
+
+  - name: "GHES Backup on Azure"
+    url: "https://github.com/humanascode/GitHub-Enterprise-Server-Backup-Azure"
+    description: "Scripts and methods to configure a robust backup and restore process for GitHub Enterprise Server, leveraging Azure storage and native automation capabilities."
+    categories:
+      - infra
+    group: "Infrastructure"
+    tags:
+      - ghes
+      - backup
+      - azure
+      - dr
+
+  - name: "ALZ Modern Assessment"
+    url: "https://github.com/Iditbnaya/Azure-ALZ-Modern-Assessment"
+    description: "Toolkit for assessing and modernizing Azure Landing Zones. Evaluates design areas, identifies gaps, and aligns with the Microsoft Cloud Adoption Framework best practices."
+    categories:
+      - infra
+    group: "Infrastructure"
+    tags:
+      - alz
+      - landing-zone
+      - azure
+      - caf
+
+  - name: "Policy Exemption Automation"
+    url: "https://github.com/Iditbnaya/PolicyExamptAutomation"
+    description: "Azure Security Center policy exemption automation. Streamlines management of Azure Policy exemptions at scale across your organization with full audit trail."
+    categories:
+      - infra
+      - security
+    group: "Infrastructure"
+    tags:
+      - azure-policy
+      - security-center
+      - automation
+
+  - name: "Azure Update Manager Tools"
+    url: "https://github.com/helderpinto/AzureUpdateManagerTools"
+    description: "Tools for staged OS patching with Azure Update Manager and Azure Automation. Orchestrate updates across your entire fleet with fine-grained control over rollout rings."
+    categories:
+      - infra
+    group: "Infrastructure"
+    tags:
+      - azure
+      - patching
+      - automation
+      - updates
+
+  - name: "Service Retirements Agent"
+    url: "https://github.com/customer-success-microsoft/service-retirements-agent"
+    description: "MCP server exposing Azure service retirements and deprecations from Cosmos DB. Pluggable ingestion from Azure Advisor and custom providers for proactive planning."
+    categories:
+      - infra
+    group: "Infrastructure"
+    tags:
+      - mcp
+      - azure
+      - retirements
+      - cosmos-db
+
+  - name: "Azure RBAC Controller"
+    url: "https://github.com/humanascode/azure-rbac-controller"
+    description: "Manage Azure RBAC role assignments as code using Terraform, with automated drift detection via GitHub Actions. Keep your permissions consistent, auditable, and version-controlled."
+    categories:
+      - infra
+      - security
+    group: "Infrastructure"
+    tags:
+      - terraform
+      - rbac
+      - github-actions
+      - drift-detection
+
+  # ── DATA ──────────────────────────────────────────────────────────────────
+  - name: "Microsoft Fabric Samples"
+    url: "https://github.com/microsoft/fabric-samples"
+    description: "Official hands-on examples and resources for Microsoft Fabric. Whether you're new or deepening your expertise, this is your go-to learning and reference launchpad."
+    categories:
+      - data
+    group: "Data Engineering"
+    tags:
+      - fabric
+      - microsoft
+      - samples
+      - learning
+
+  - name: "Fabric Toolbox"
+    url: "https://github.com/microsoft/fabric-toolbox"
+    description: "Official Microsoft Fabric Toolbox — a growing collection of utilities, accelerators, and tools to enhance your Fabric development workflow and operational experience."
+    categories:
+      - data
+    group: "Data Engineering"
+    tags:
+      - fabric
+      - tools
+      - accelerators
+
+  - name: "fabric-cicd"
+    url: "https://github.com/microsoft/fabric-cicd"
+    description: "Python library for code-first CI/CD automation of Microsoft Fabric workspaces. Seamlessly integrate source-controlled workspaces into your deployment pipelines without touching Fabric APIs directly."
+    categories:
+      - data
+    group: "Data Engineering"
+    tags:
+      - fabric
+      - cicd
+      - python
+      - automation
+
+  - name: "Semantic Link Labs"
+    url: "https://github.com/microsoft/semantic-link-labs"
+    description: "Python library for Microsoft Fabric notebooks that extends Semantic Link capabilities. Seamlessly integrates semantic models with Fabric's full analytical horsepower."
+    categories:
+      - data
+    group: "Data Engineering"
+    tags:
+      - fabric
+      - python
+      - semantic-link
+      - notebooks
+
+  - name: "Fabric MCP Server"
+    url: "https://github.com/microsoft/mcp/tree/main/servers/Fabric.Mcp.Server"
+    description: "Official MCP server packaging Fabric's OpenAPI specs, schema definitions, examples, and curated guidance as a unified context layer for AI agents and developer tools."
+    categories:
+      - data
+    group: "Data Engineering"
+    tags:
+      - fabric
+      - mcp
+      - ai-agents
+      - openapi

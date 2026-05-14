@@ -31,19 +31,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
-      - name: Assemble site
-        run: |
-          mkdir -p _site
-          # Portal entry point
-          cp web/index.html _site/index.html
-          # Workload READMEs (served as static assets for reference)
-          for category in apps infra data security; do
-            src="workloads/$category/README.md"
-            if [ -f "$src" ]; then
-              mkdir -p "_site/workloads/$category"
-              cp "$src" "_site/workloads/$category/README.md"
-            fi
-          done
+      - name: Build site
+        run: make site
 
       - name: Setup Pages
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0

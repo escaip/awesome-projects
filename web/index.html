@@ -535,10 +535,11 @@
   <!-- ═══ FILTER BAR ═══ -->
   <div class="filter-bar">
     <div class="filter-inner">
-      <button class="tab active" data-filter="all">All <span class="tab-n">24</span></button>
-      <button class="tab" data-filter="apps">Apps <span class="tab-n">9</span></button>
-      <button class="tab" data-filter="infra">Infra <span class="tab-n">10</span></button>
-      <button class="tab" data-filter="data">Data <span class="tab-n">5</span></button>
+      <button class="tab active" data-filter="all">All <span class="tab-n" id="tn-all">0</span></button>
+      <button class="tab" data-filter="apps">Apps <span class="tab-n" id="tn-apps">0</span></button>
+      <button class="tab" data-filter="infra">Infra <span class="tab-n" id="tn-infra">0</span></button>
+      <button class="tab" data-filter="data">Data <span class="tab-n" id="tn-data">0</span></button>
+      <button class="tab" data-filter="security">Security <span class="tab-n" id="tn-security">0</span></button>
       <div class="search-wrap">
         <input class="search" id="searchInput" type="text" placeholder="search projects…" autocomplete="off">
       </div>
@@ -549,199 +550,10 @@
   <main>
     <div class="container">
 
-      <!-- ── APPS / GitHub Related ── -->
-      <div class="section-label" id="lbl-apps-gh" data-group="apps">GitHub Related</div>
-      <div class="grid" id="grid-apps-gh">
+      <!-- ── dynamically rendered by JS ── -->
+      <div id="repoContainer"></div>
 
-        <a class="card" data-cat="apps" href="https://github.com/microsoft/CoPilotHackathon" target="_blank" rel="noopener">
-          <div class="card-head"><span class="badge">Apps</span><span class="card-arrow">↗</span></div>
-          <h3 class="card-title">GitHub Copilot Hackathon</h3>
-          <p class="card-desc">Hands-on hackathon material for GitHub Copilot across Node.js, Java, Python, and .NET. The ideal starting point for teams embarking on AI-assisted development.</p>
-          <div class="tags"><span class="tag">copilot</span><span class="tag">nodejs</span><span class="tag">java</span><span class="tag">python</span><span class="tag">.net</span></div>
-        </a>
-
-        <a class="card" data-cat="apps" href="https://github.com/microsoft/github-copilot-workshops-trainer" target="_blank" rel="noopener">
-          <div class="card-head"><span class="badge">Apps</span><span class="badge-private">🔒 Private</span><span class="card-arrow">↗</span></div>
-          <h3 class="card-title">Copilot Adoption Plan — Trainer</h3>
-          <p class="card-desc">Trainer resource repository for the GitHub Copilot Adoption Plan. Provides facilitator guides, slide decks, and supplemental materials for running Copilot workshops.</p>
-          <div class="tags"><span class="tag">copilot</span><span class="tag">training</span><span class="tag">adoption</span></div>
-        </a>
-
-        <a class="card" data-cat="apps" href="https://github.com/microsoft/github-copilot-workshops-labs" target="_blank" rel="noopener">
-          <div class="card-head"><span class="badge">Apps</span><span class="card-arrow">↗</span></div>
-          <h3 class="card-title">Copilot Adoption Plan — Labs</h3>
-          <p class="card-desc">Lab exercises for the GitHub Copilot Adoption Plan. Practical workshops guiding teams through real-world Copilot usage patterns and best practices.</p>
-          <div class="tags"><span class="tag">copilot</span><span class="tag">workshops</span><span class="tag">labs</span></div>
-        </a>
-
-        <a class="card" data-cat="apps" href="https://github.com/microsoft/github-copilot-workshops-full" target="_blank" rel="noopener">
-          <div class="card-head"><span class="badge">Apps</span><span class="card-arrow">↗</span></div>
-          <h3 class="card-title">Copilot Adoption Plan — Full Solution</h3>
-          <p class="card-desc">Complete reference solution for the GitHub Copilot Adoption Plan, providing the full end-to-end workshop experience with every exercise solved and annotated.</p>
-          <div class="tags"><span class="tag">copilot</span><span class="tag">adoption</span><span class="tag">reference</span></div>
-        </a>
-
-        <a class="card" data-cat="apps" href="https://github.com/lgiuliani80/githubapp-gettoken-net" target="_blank" rel="noopener">
-          <div class="card-head"><span class="badge">Apps</span><span class="card-arrow">↗</span></div>
-          <h3 class="card-title">GitHub Token Server</h3>
-          <p class="card-desc">Lightweight ASP.NET Core service that obtains GitHub App installation tokens on demand. Simplifies GitHub App auth integration into CI/CD pipelines and applications.</p>
-          <div class="tags"><span class="tag">aspnet</span><span class="tag">auth</span><span class="tag">github-app</span><span class="tag">cicd</span></div>
-        </a>
-
-        <a class="card" data-cat="apps" href="https://github.com/olivomarco/action-count-users-by-org" target="_blank" rel="noopener">
-          <div class="card-head"><span class="badge">Apps</span><span class="card-arrow">↗</span></div>
-          <h3 class="card-title">Enterprise User Reporting</h3>
-          <p class="card-desc">Scheduled GitHub Actions pipeline that generates a daily report of consumed GitHub Enterprise licenses — when native reporting isn't enough.</p>
-          <div class="tags"><span class="tag">github-actions</span><span class="tag">reporting</span><span class="tag">enterprise</span><span class="tag">licenses</span></div>
-        </a>
-
-      </div>
-
-      <!-- ── APPS / AI Related ── -->
-      <div class="section-label" id="lbl-apps-ai" data-group="apps">AI Related</div>
-      <div class="grid" id="grid-apps-ai">
-
-        <a class="card" data-cat="apps" href="https://github.com/Azure/aihub" target="_blank" rel="noopener">
-          <div class="card-head"><span class="badge">Apps</span><span class="card-arrow">↗</span></div>
-          <h3 class="card-title">AI Hub</h3>
-          <p class="card-desc">Executive demo and hands-on experience hub for Azure AI capabilities. Showcases the breadth of Azure AI services in an interactive, engaging format for any audience.</p>
-          <div class="tags"><span class="tag">azure</span><span class="tag">ai</span><span class="tag">demo</span></div>
-        </a>
-
-        <a class="card" data-cat="apps" href="https://github.com/Iditbnaya/audio-transcriber-react" target="_blank" rel="noopener">
-          <div class="card-head"><span class="badge">Apps</span><span class="card-arrow">↗</span></div>
-          <h3 class="card-title">Audio Transcriber</h3>
-          <p class="card-desc">Minimal React + TypeScript app for uploading audio files and transcribing them using Azure OpenAI Speech-to-Text (gpt-4o-transcribe). Clean, focused, production-ready.</p>
-          <div class="tags"><span class="tag">react</span><span class="tag">typescript</span><span class="tag">azure-openai</span><span class="tag">speech</span></div>
-        </a>
-
-        <a class="card" data-cat="apps" href="https://github.com/benarch/Github_Copilot-Obsidian--Second_Brain" target="_blank" rel="noopener">
-          <div class="card-head"><span class="badge">Apps</span><span class="card-arrow">↗</span></div>
-          <h3 class="card-title">Copilot · Obsidian Second Brain</h3>
-          <p class="card-desc">Export OneNote notebooks to Markdown, power them with Obsidian, and wire them into Copilot CLI and Claude Code as a queryable RAG graph knowledge database.</p>
-          <div class="tags"><span class="tag">copilot</span><span class="tag">obsidian</span><span class="tag">rag</span><span class="tag">knowledge-graph</span></div>
-        </a>
-
-      </div>
-
-      <!-- ── INFRA ── -->
-      <div class="section-label" id="lbl-infra" data-group="infra">Infrastructure</div>
-      <div class="grid" id="grid-infra">
-
-        <a class="card" data-cat="infra" href="https://github.com/Azure/azqr" target="_blank" rel="noopener">
-          <div class="card-head"><span class="badge">Infra</span><span class="card-arrow">↗</span></div>
-          <h3 class="card-title">Azure Quick Review</h3>
-          <p class="card-desc">Rapidly assess your Azure environment with automated checks for adherence to best practices and security guidelines. Get actionable insights across your entire subscription.</p>
-          <div class="tags"><span class="tag">azure</span><span class="tag">compliance</span><span class="tag">security</span><span class="tag">cli</span></div>
-        </a>
-
-        <a class="card" data-cat="infra" href="https://github.com/microsoft/finops-toolkit" target="_blank" rel="noopener">
-          <div class="card-head"><span class="badge">Infra</span><span class="card-arrow">↗</span></div>
-          <h3 class="card-title">FinOps Toolkit</h3>
-          <p class="card-desc">Tools and resources to adopt and implement FinOps capabilities that automate and extend cost management and governance across the Microsoft Cloud.</p>
-          <div class="tags"><span class="tag">finops</span><span class="tag">azure</span><span class="tag">cost-management</span></div>
-        </a>
-
-        <a class="card" data-cat="infra" href="https://github.com/Azure/agw-pep-custom-names" target="_blank" rel="noopener">
-          <div class="card-head"><span class="badge">Infra</span><span class="card-arrow">↗</span></div>
-          <h3 class="card-title">AGW Private Endpoint Names</h3>
-          <p class="card-desc">Reference architecture and tests for Azure Application Gateway Private Endpoint with custom DNS name solutions. Solves a real enterprise networking gap.</p>
-          <div class="tags"><span class="tag">azure</span><span class="tag">app-gateway</span><span class="tag">private-endpoint</span><span class="tag">dns</span></div>
-        </a>
-
-        <a class="card" data-cat="infra" href="https://github.com/humanascode/terraform-azapi-nsgator" target="_blank" rel="noopener">
-          <div class="card-head"><span class="badge">Infra</span><span class="card-arrow">↗</span></div>
-          <h3 class="card-title">NSGator</h3>
-          <p class="card-desc">Automates Azure NSG rule management with intelligent priority assignment and duplicate detection. Manage network security group rules as code with Terraform.</p>
-          <div class="tags"><span class="tag">terraform</span><span class="tag">nsg</span><span class="tag">azure</span><span class="tag">networking</span></div>
-        </a>
-
-        <a class="card" data-cat="infra" href="https://github.com/humanascode/GitHub-Enterprise-Server-Backup-Azure" target="_blank" rel="noopener">
-          <div class="card-head"><span class="badge">Infra</span><span class="card-arrow">↗</span></div>
-          <h3 class="card-title">GHES Backup on Azure</h3>
-          <p class="card-desc">Scripts and methods to configure a robust backup and restore process for GitHub Enterprise Server, leveraging Azure storage and native automation capabilities.</p>
-          <div class="tags"><span class="tag">ghes</span><span class="tag">backup</span><span class="tag">azure</span><span class="tag">dr</span></div>
-        </a>
-
-        <a class="card" data-cat="infra" href="https://github.com/Iditbnaya/Azure-ALZ-Modern-Assessment" target="_blank" rel="noopener">
-          <div class="card-head"><span class="badge">Infra</span><span class="card-arrow">↗</span></div>
-          <h3 class="card-title">ALZ Modern Assessment</h3>
-          <p class="card-desc">Toolkit for assessing and modernizing Azure Landing Zones. Evaluates design areas, identifies gaps, and aligns with the Microsoft Cloud Adoption Framework best practices.</p>
-          <div class="tags"><span class="tag">alz</span><span class="tag">landing-zone</span><span class="tag">azure</span><span class="tag">caf</span></div>
-        </a>
-
-        <a class="card" data-cat="infra" href="https://github.com/Iditbnaya/PolicyExamptAutomation" target="_blank" rel="noopener">
-          <div class="card-head"><span class="badge">Infra</span><span class="card-arrow">↗</span></div>
-          <h3 class="card-title">Policy Exemption Automation</h3>
-          <p class="card-desc">Azure Security Center policy exemption automation. Streamlines management of Azure Policy exemptions at scale across your organization with full audit trail.</p>
-          <div class="tags"><span class="tag">azure-policy</span><span class="tag">security-center</span><span class="tag">automation</span></div>
-        </a>
-
-        <a class="card" data-cat="infra" href="https://github.com/helderpinto/AzureUpdateManagerTools" target="_blank" rel="noopener">
-          <div class="card-head"><span class="badge">Infra</span><span class="card-arrow">↗</span></div>
-          <h3 class="card-title">Azure Update Manager Tools</h3>
-          <p class="card-desc">Tools for staged OS patching with Azure Update Manager and Azure Automation. Orchestrate updates across your entire fleet with fine-grained control over rollout rings.</p>
-          <div class="tags"><span class="tag">azure</span><span class="tag">patching</span><span class="tag">automation</span><span class="tag">updates</span></div>
-        </a>
-
-        <a class="card" data-cat="infra" href="https://github.com/customer-success-microsoft/service-retirements-agent" target="_blank" rel="noopener">
-          <div class="card-head"><span class="badge">Infra</span><span class="card-arrow">↗</span></div>
-          <h3 class="card-title">Service Retirements Agent</h3>
-          <p class="card-desc">MCP server exposing Azure service retirements and deprecations from Cosmos DB. Pluggable ingestion from Azure Advisor and custom providers for proactive planning.</p>
-          <div class="tags"><span class="tag">mcp</span><span class="tag">azure</span><span class="tag">retirements</span><span class="tag">cosmos-db</span></div>
-        </a>
-
-        <a class="card" data-cat="infra" href="https://github.com/humanascode/azure-rbac-controller" target="_blank" rel="noopener">
-          <div class="card-head"><span class="badge">Infra</span><span class="card-arrow">↗</span></div>
-          <h3 class="card-title">Azure RBAC Controller</h3>
-          <p class="card-desc">Manage Azure RBAC role assignments as code using Terraform, with automated drift detection via GitHub Actions. Keep your permissions consistent, auditable, and version-controlled.</p>
-          <div class="tags"><span class="tag">terraform</span><span class="tag">rbac</span><span class="tag">github-actions</span><span class="tag">drift-detection</span></div>
-        </a>
-
-      </div>
-
-      <!-- ── DATA ── -->
-      <div class="section-label" id="lbl-data" data-group="data">Data Engineering</div>
-      <div class="grid" id="grid-data">
-
-        <a class="card" data-cat="data" href="https://github.com/microsoft/fabric-samples" target="_blank" rel="noopener">
-          <div class="card-head"><span class="badge">Data</span><span class="card-arrow">↗</span></div>
-          <h3 class="card-title">Microsoft Fabric Samples</h3>
-          <p class="card-desc">Official hands-on examples and resources for Microsoft Fabric. Whether you're new or deepening your expertise, this is your go-to learning and reference launchpad.</p>
-          <div class="tags"><span class="tag">fabric</span><span class="tag">microsoft</span><span class="tag">samples</span><span class="tag">learning</span></div>
-        </a>
-
-        <a class="card" data-cat="data" href="https://github.com/microsoft/fabric-toolbox" target="_blank" rel="noopener">
-          <div class="card-head"><span class="badge">Data</span><span class="card-arrow">↗</span></div>
-          <h3 class="card-title">Fabric Toolbox</h3>
-          <p class="card-desc">Official Microsoft Fabric Toolbox — a growing collection of utilities, accelerators, and tools to enhance your Fabric development workflow and operational experience.</p>
-          <div class="tags"><span class="tag">fabric</span><span class="tag">tools</span><span class="tag">accelerators</span></div>
-        </a>
-
-        <a class="card" data-cat="data" href="https://github.com/microsoft/fabric-cicd" target="_blank" rel="noopener">
-          <div class="card-head"><span class="badge">Data</span><span class="card-arrow">↗</span></div>
-          <h3 class="card-title">fabric-cicd</h3>
-          <p class="card-desc">Python library for code-first CI/CD automation of Microsoft Fabric workspaces. Seamlessly integrate source-controlled workspaces into your deployment pipelines without touching Fabric APIs directly.</p>
-          <div class="tags"><span class="tag">fabric</span><span class="tag">cicd</span><span class="tag">python</span><span class="tag">automation</span></div>
-        </a>
-
-        <a class="card" data-cat="data" href="https://github.com/microsoft/semantic-link-labs" target="_blank" rel="noopener">
-          <div class="card-head"><span class="badge">Data</span><span class="card-arrow">↗</span></div>
-          <h3 class="card-title">Semantic Link Labs</h3>
-          <p class="card-desc">Python library for Microsoft Fabric notebooks that extends Semantic Link capabilities. Seamlessly integrates semantic models with Fabric's full analytical horsepower.</p>
-          <div class="tags"><span class="tag">fabric</span><span class="tag">python</span><span class="tag">semantic-link</span><span class="tag">notebooks</span></div>
-        </a>
-
-        <a class="card" data-cat="data" href="https://github.com/microsoft/mcp/tree/main/servers/Fabric.Mcp.Server" target="_blank" rel="noopener">
-          <div class="card-head"><span class="badge">Data</span><span class="card-arrow">↗</span></div>
-          <h3 class="card-title">Fabric MCP Server</h3>
-          <p class="card-desc">Official MCP server packaging Fabric's OpenAPI specs, schema definitions, examples, and curated guidance as a unified context layer for AI agents and developer tools.</p>
-          <div class="tags"><span class="tag">fabric</span><span class="tag">mcp</span><span class="tag">ai-agents</span><span class="tag">openapi</span></div>
-        </a>
-
-      </div>
-
-      <!-- Empty state -->
+            <!-- Empty state -->
       <div class="empty-state" id="emptyState">
         <div class="empty-icon">◎</div>
         <div class="empty-msg">No projects match your search</div>
@@ -774,58 +586,156 @@
         if (p < 1) requestAnimationFrame(tick);
       })(start);
     }
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        countUp(document.getElementById('s-apps'),  9,  750);
-        countUp(document.getElementById('s-infra'), 10, 900);
-        countUp(document.getElementById('s-data'),  5,  600);
-      }, 250);
-    });
 
-    // ── Filter + Search ─────────────────────────────────────────────────
-    const tabs   = document.querySelectorAll('.tab');
-    const cards  = document.querySelectorAll('.card');
-    const grids  = document.querySelectorAll('.grid');
-    const labels = document.querySelectorAll('.section-label');
-    const empty  = document.getElementById('emptyState');
-    let   active = 'all';
+    // ── Badge label map ─────────────────────────────────────────────────
+    const CAT_LABEL = { apps: 'Apps', infra: 'Infra', data: 'Data', security: 'Security' };
 
-    function applyFilter() {
-      const q = document.getElementById('searchInput').value.toLowerCase().trim();
+    // ── Build a single card element ──────────────────────────────────────
+    function buildCard(repo, cat) {
+      const a = document.createElement('a');
+      a.className = 'card';
+      a.dataset.cat = cat;
+      // store all categories as space-separated for multi-cat filtering
+      a.dataset.cats = repo.categories.join(' ');
+      a.href = repo.url;
+      a.target = '_blank';
+      a.rel = 'noopener';
 
-      cards.forEach(card => {
-        const cat   = card.dataset.cat;
-        const text  = card.innerText.toLowerCase();
-        const byTab = active === 'all' || cat === active;
-        const byQ   = !q || text.includes(q);
-        card.classList.toggle('hidden', !(byTab && byQ));
-      });
+      const tagsHtml = (repo.tags || [])
+        .map(t => `<span class="tag">${t}</span>`).join('');
 
-      // Hide empty section labels + grids
-      grids.forEach(grid => {
-        const visible = grid.querySelectorAll('.card:not(.hidden)').length > 0;
-        grid.classList.toggle('hidden', !visible);
-        const prev = grid.previousElementSibling;
-        if (prev && prev.classList.contains('section-label')) {
-          prev.classList.toggle('hidden', !visible);
-        }
-      });
-
-      // Show/hide empty state
-      const totalVisible = document.querySelectorAll('.card:not(.hidden)').length;
-      empty.classList.toggle('visible', totalVisible === 0);
+      a.innerHTML = `
+        <div class="card-head"><span class="badge">${CAT_LABEL[cat]}</span><span class="card-arrow">↗</span></div>
+        <h3 class="card-title">${repo.name}</h3>
+        <p class="card-desc">${repo.description}</p>
+        ${tagsHtml ? `<div class="tags">${tagsHtml}</div>` : ''}
+      `;
+      return a;
     }
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        active = tab.dataset.filter;
-        applyFilter();
-      });
-    });
+    // ── Render all cards from data ───────────────────────────────────────
+    function renderRepos(repositories) {
+      const container = document.getElementById('repoContainer');
+      const CATEGORY_ORDER = ['apps', 'infra', 'data', 'security'];
 
-    document.getElementById('searchInput').addEventListener('input', applyFilter);
+      // Collect unique groups per category
+      const catGroups = {};
+      CATEGORY_ORDER.forEach(cat => { catGroups[cat] = []; });
+
+      repositories.forEach(repo => {
+        (repo.categories || []).forEach(cat => {
+          if (!catGroups[cat]) catGroups[cat] = [];
+          const group = repo.group || 'General';
+          if (!catGroups[cat].includes(group)) catGroups[cat].push(group);
+        });
+      });
+
+      // Render section label + grid per (category, group)
+      CATEGORY_ORDER.forEach(cat => {
+        catGroups[cat].forEach(group => {
+          const slugCat   = cat.replace(/\W/g, '-');
+          const slugGroup = group.toLowerCase().replace(/\W+/g, '-');
+
+          const label = document.createElement('div');
+          label.className = 'section-label';
+          label.dataset.group = cat;
+          label.textContent = group;
+          container.appendChild(label);
+
+          const grid = document.createElement('div');
+          grid.className = 'grid';
+          container.appendChild(grid);
+
+          repositories
+            .filter(r => (r.categories || []).includes(cat) && (r.group || 'General') === group)
+            .forEach(repo => grid.appendChild(buildCard(repo, cat)));
+        });
+      });
+
+      // Compute per-category counts (unique repos per category)
+      const counts = {};
+      CATEGORY_ORDER.forEach(cat => {
+        counts[cat] = repositories.filter(r => (r.categories || []).includes(cat)).length;
+      });
+      // "All" counts unique repos total
+      counts.all = repositories.length;
+
+      // Update tab counts
+      Object.keys(counts).forEach(cat => {
+        const el = document.getElementById(`tn-${cat}`);
+        if (el) el.textContent = counts[cat];
+      });
+
+      // Animate hero stats
+      setTimeout(() => {
+        const statMap = { 's-apps': counts.apps, 's-infra': counts.infra, 's-data': counts.data };
+        Object.entries(statMap).forEach(([id, val]) => {
+          const el = document.getElementById(id);
+          if (el && val) countUp(el, val, 750);
+        });
+      }, 250);
+
+      // Initialise filter + search
+      initFilterSearch();
+    }
+
+    // ── Filter + Search ─────────────────────────────────────────────────
+    function initFilterSearch() {
+      const tabs  = document.querySelectorAll('.tab');
+      const empty = document.getElementById('emptyState');
+      let   active = 'all';
+
+      function applyFilter() {
+        const q     = document.getElementById('searchInput').value.toLowerCase().trim();
+        const cards = document.querySelectorAll('.card');
+        const grids = document.querySelectorAll('.grid');
+
+        cards.forEach(card => {
+          const cats  = card.dataset.cats || card.dataset.cat;
+          const text  = card.innerText.toLowerCase();
+          const byTab = active === 'all' || cats.split(' ').includes(active);
+          const byQ   = !q || text.includes(q);
+          card.classList.toggle('hidden', !(byTab && byQ));
+        });
+
+        grids.forEach(grid => {
+          const visible = grid.querySelectorAll('.card:not(.hidden)').length > 0;
+          grid.classList.toggle('hidden', !visible);
+          const prev = grid.previousElementSibling;
+          if (prev && prev.classList.contains('section-label')) {
+            prev.classList.toggle('hidden', !visible);
+          }
+        });
+
+        const totalVisible = document.querySelectorAll('.card:not(.hidden)').length;
+        empty.classList.toggle('visible', totalVisible === 0);
+      }
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          active = tab.dataset.filter;
+          applyFilter();
+        });
+      });
+
+      document.getElementById('searchInput').addEventListener('input', applyFilter);
+    }
+
+    // ── Bootstrap: fetch data and render ────────────────────────────────
+    fetch('repositories.json')
+      .then(r => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return r.json();
+      })
+      .then(data => renderRepos(data.repositories || []))
+      .catch(err => {
+        console.error('Failed to load repositories.json:', err);
+        const container = document.getElementById('repoContainer');
+        container.innerHTML = '<p style="color:var(--text-2);text-align:center;padding:2rem">Could not load repository data.</p>';
+        initFilterSearch();
+      });
   </script>
 </body>
 </html>
