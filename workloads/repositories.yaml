@@ -45,6 +45,30 @@ repositories:
       - copilot
       - solution
 
+  - name: "Copilot Cost"
+    url: "https://github.com/devartifex/copilot-cost"
+    description: "Local-only cost tracking for the GitHub Copilot CLI — statusline + private dashboard from your OTel traces."
+    categories:
+      - apps
+    group: "GitHub Related"
+    tags:
+      - github
+      - copilot
+      - cost-tracking
+      - otel
+
+  - name: "Copilot Unleashed"
+    url: "https://github.com/devartifex/copilot-unleashed"
+    description: "A mobile first, self-hosted multi-model AI chat powered by the GitHub Copilot SDK. A modern alternative to ChatGPT, Claude, and Gemini."
+    categories:
+      - apps
+    group: "GitHub Related"
+    tags:
+      - github
+      - copilot
+      - ai-chat
+      - self-hosted
+
   - name: "GitHub Token Server"
     url: "https://github.com/lgiuliani80/githubapp-gettoken-net"
     description: "A lightweight ASP.NET Core service that facilitates obtaining authentication tokens for GitHub App installations. Easy to integrate into CI/CD pipelines or other applications."
@@ -106,6 +130,20 @@ repositories:
       - knowledge-graph
 
   # ── INFRA ─────────────────────────────────────────────────────────────────
+  - name: "Azure SRE Demo Manager"
+    url: "https://github.com/Microsoft-Demos/Azure-SRE-Demo-Manager"
+    description: "Azure SRE Demo Manager is a multi-city parking management demo application built to illustrate Azure Site Reliability Engineering (SRE) in action. It combines containerized services and VM-based components to simulate real-world workloads, enriched with chaos engineering scenarios and integrated observability tooling."
+    categories:
+      - infra
+      - apps
+    group: "Infrastructure"
+    tags:
+      - azure
+      - sre
+      - demo
+      - chaos-engineering
+      - observability
+
   - name: "Azure Quick Review"
     url: "https://github.com/Azure/azqr"
     description: "Rapidly assess your Azure environment with automated checks for adherence to best practices and security guidelines. Get actionable insights across your entire subscription."
@@ -228,6 +266,19 @@ repositories:
       - drift-detection
 
   # ── DATA ──────────────────────────────────────────────────────────────────
+  - name: "RTI Energy Demo"
+    url: "https://github.com/evajurado/RTI-energy"
+    description: "A public Jupyter Notebook–based repository for energy-related demo of RTI. Demonstrates real-time insights and data analytics capabilities applied to energy sector use cases."
+    categories:
+      - data
+    group: "Data Engineering"
+    tags:
+      - jupyter
+      - notebooks
+      - rti
+      - energy
+      - demo
+
   - name: "Microsoft Fabric Samples"
     url: "https://github.com/microsoft/fabric-samples"
     description: "Official hands-on examples and resources for Microsoft Fabric. Whether you're new or deepening your expertise, this is your go-to learning and reference launchpad."
