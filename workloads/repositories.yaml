@@ -168,6 +168,19 @@ repositories:
       - cost-management
       - rate-limiting
 
+  - name: "GenAI Development Techniques"
+    url: "https://github.com/olivomarco/genai-development-techniques"
+    description: "Comprehensive, evidence-based comparison of techniques, methodologies, and frameworks for structured AI-assisted software development."
+    categories:
+      - apps
+    group: "AI Related"
+    tags:
+      - ai
+      - genai
+      - software-development
+      - methodologies
+      - frameworks
+
   # ── INFRA ─────────────────────────────────────────────────────────────────
   - name: "Azure SRE Demo Manager"
     url: "https://github.com/Microsoft-Demos/Azure-SRE-Demo-Manager"
