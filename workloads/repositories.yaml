@@ -106,6 +106,18 @@ repositories:
       - cli
       - go
 
+  - name: "GitHub Copilot Token Optimization"
+    url: "https://github.com/olivomarco/github-copilot-token-optimization"
+    description: "Practical techniques and guidance for optimizing token usage with GitHub Copilot — covers prompting strategies, context management, and cost-reduction best practices."
+    categories:
+      - apps
+    group: "GitHub Related"
+    tags:
+      - github
+      - copilot
+      - token-optimization
+      - best-practices
+
   # ── APPS · AI Related ─────────────────────────────────────────────────────
   - name: "AI Hub"
     url: "https://github.com/Azure/aihub"
