@@ -93,6 +93,19 @@ repositories:
       - enterprise
       - licenses
 
+  - name: "GitHub Quick Review"
+    url: "https://github.com/microsoft/ghqr"
+    description: "Evaluate your GitHub enterprise and organizations against GitHub best practices. A CLI tool that scans your GitHub environment and surfaces actionable recommendations."
+    categories:
+      - apps
+    group: "GitHub Related"
+    tags:
+      - github
+      - enterprise
+      - best-practices
+      - cli
+      - go
+
   # ── APPS · AI Related ─────────────────────────────────────────────────────
   - name: "AI Hub"
     url: "https://github.com/Azure/aihub"
