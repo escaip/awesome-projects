@@ -142,6 +142,20 @@ repositories:
       - copilot
       - knowledge-graph
 
+  - name: "Azure Foundry Observability"
+    url: "https://github.com/benarch/Azure-Foundry_Observability"
+    description: "Real-time, multi-tenant observability platform for Azure AI Foundry — monitors token usage, forecasts costs, manages per-user/group/deployment rate limits via APIM policy, and provides cross-subscription provisioned quota visibility."
+    categories:
+      - apps
+    group: "AI Related"
+    tags:
+      - azure
+      - ai-foundry
+      - observability
+      - apim
+      - cost-management
+      - rate-limiting
+
   # ── INFRA ─────────────────────────────────────────────────────────────────
   - name: "Azure SRE Demo Manager"
     url: "https://github.com/Microsoft-Demos/Azure-SRE-Demo-Manager"
