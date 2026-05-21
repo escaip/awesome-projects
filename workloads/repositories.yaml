@@ -118,6 +118,19 @@ repositories:
       - token-optimization
       - best-practices
 
+  - name: "Copilot Updates"
+    url: "https://github.com/devartifex/copilot-updates"
+    description: "Fetch GitHub changelog articles for any label and generate dark-themed PowerPoint presentations, powered by a Copilot skill and Python pipeline."
+    categories:
+      - apps
+    group: "GitHub Related"
+    tags:
+      - github
+      - copilot
+      - changelog
+      - powerpoint
+      - python
+
   # ── APPS · AI Related ─────────────────────────────────────────────────────
   - name: "AI Hub"
     url: "https://github.com/Azure/aihub"
