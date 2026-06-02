@@ -181,6 +181,19 @@ repositories:
       - cost-management
       - rate-limiting
 
+  - name: "Azure ML vLLM Host"
+    url: "https://github.com/frsl92/aml-vllm-host"
+    description: "Azure ML deployment template for hosting open-source LLMs with vLLM. Provides scripts, notebooks, and YAML templates for serving large language models on Azure Machine Learning."
+    categories:
+      - apps
+    group: "AI Related"
+    tags:
+      - azure
+      - azure-ml
+      - vllm
+      - llm
+      - deployment
+
   - name: "GenAI Development Techniques"
     url: "https://github.com/olivomarco/genai-development-techniques"
     description: "Comprehensive, evidence-based comparison of techniques, methodologies, and frameworks for structured AI-assisted software development."
