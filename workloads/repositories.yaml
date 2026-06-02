@@ -337,3 +337,7 @@ repositories:
       - mcp
       - ai-agents
       - openapi
+    audit:
+      ignore:
+        - non-canonical-url
+      reason: "MCP server lives in a subdirectory of the microsoft/mcp monorepo; the subdirectory URL is intentional and is the canonical location for this specific server."
