@@ -93,6 +93,44 @@ repositories:
       - enterprise
       - licenses
 
+  - name: "GitHub Quick Review"
+    url: "https://github.com/microsoft/ghqr"
+    description: "Evaluate your GitHub enterprise and organizations against GitHub best practices. A CLI tool that scans your GitHub environment and surfaces actionable recommendations."
+    categories:
+      - apps
+    group: "GitHub Related"
+    tags:
+      - github
+      - enterprise
+      - best-practices
+      - cli
+      - go
+
+  - name: "GitHub Copilot Token Optimization"
+    url: "https://github.com/olivomarco/github-copilot-token-optimization"
+    description: "Practical techniques and guidance for optimizing token usage with GitHub Copilot — covers prompting strategies, context management, and cost-reduction best practices."
+    categories:
+      - apps
+    group: "GitHub Related"
+    tags:
+      - github
+      - copilot
+      - token-optimization
+      - best-practices
+
+  - name: "Copilot Updates"
+    url: "https://github.com/devartifex/copilot-updates"
+    description: "Fetch GitHub changelog articles for any label and generate dark-themed PowerPoint presentations, powered by a Copilot skill and Python pipeline."
+    categories:
+      - apps
+    group: "GitHub Related"
+    tags:
+      - github
+      - copilot
+      - changelog
+      - powerpoint
+      - python
+
   # ── APPS · AI Related ─────────────────────────────────────────────────────
   - name: "AI Hub"
     url: "https://github.com/Azure/aihub"
@@ -128,6 +166,46 @@ repositories:
       - rag
       - copilot
       - knowledge-graph
+
+  - name: "Azure Foundry Observability"
+    url: "https://github.com/benarch/Azure-Foundry_Observability"
+    description: "Real-time, multi-tenant observability platform for Azure AI Foundry — monitors token usage, forecasts costs, manages per-user/group/deployment rate limits via APIM policy, and provides cross-subscription provisioned quota visibility."
+    categories:
+      - apps
+    group: "AI Related"
+    tags:
+      - azure
+      - ai-foundry
+      - observability
+      - apim
+      - cost-management
+      - rate-limiting
+
+  - name: "Azure ML vLLM Host"
+    url: "https://github.com/frsl92/aml-vllm-host"
+    description: "Azure ML deployment template for hosting open-source LLMs with vLLM. Provides scripts, notebooks, and YAML templates for serving large language models on Azure Machine Learning."
+    categories:
+      - apps
+    group: "AI Related"
+    tags:
+      - azure
+      - azure-ml
+      - vllm
+      - llm
+      - deployment
+
+  - name: "GenAI Development Techniques"
+    url: "https://github.com/olivomarco/genai-development-techniques"
+    description: "Comprehensive, evidence-based comparison of techniques, methodologies, and frameworks for structured AI-assisted software development."
+    categories:
+      - apps
+    group: "AI Related"
+    tags:
+      - ai
+      - genai
+      - software-development
+      - methodologies
+      - frameworks
 
   # ── INFRA ─────────────────────────────────────────────────────────────────
   - name: "Azure SRE Demo Manager"
