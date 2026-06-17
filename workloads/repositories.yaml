@@ -419,3 +419,17 @@ repositories:
       ignore:
         - non-canonical-url
       reason: "MCP server lives in a subdirectory of the microsoft/mcp monorepo; the subdirectory URL is intentional and is the canonical location for this specific server."
+
+  - name: "Fabric DAX Load Test"
+    url: "https://github.com/dbrownems/FabricDaxLoadTest"
+    description: "Load testing tool for Microsoft Fabric and Power BI semantic models. Simulates concurrent DAX queries against the XMLA endpoint using ADOMD.NET and captures per-query telemetry into Delta tables for analysis in Power BI."
+    categories:
+      - data
+    group: "Data Engineering"
+    tags:
+      - fabric
+      - power-bi
+      - dax
+      - load-testing
+      - csharp
+      - delta-tables
