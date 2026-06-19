@@ -1,50 +1,6 @@
 repositories:
 
   # ── APPS · GitHub Related ──────────────────────────────────────────────────
-  - name: "GitHub Copilot Hackathon"
-    url: "https://github.com/microsoft/CoPilotHackathon"
-    description: "GitHub Copilot Hackathon for Nodejs, JAVA, Python & .NET"
-    categories:
-      - apps
-    group: "GitHub Related"
-    tags:
-      - github
-      - copilot
-      - hackathon
-
-  - name: "GitHub Copilot Adoption Plan - Trainer"
-    url: "https://github.com/microsoft/github-copilot-workshops-trainer"
-    description: "Trainer resource repository for the GitHub Copilot Adoption Plan. Provides facilitator guides, slide decks, and supplemental materials for running Copilot workshops."
-    categories:
-      - apps
-    group: "GitHub Related"
-    tags:
-      - github
-      - copilot
-      - workshop
-
-  - name: "GitHub Copilot Adoption Plan - Labs"
-    url: "https://github.com/microsoft/github-copilot-workshops-labs"
-    description: "GitHub Copilot Adoption Plan: Labs repository — hands-on exercises for learners following the Copilot adoption curriculum."
-    categories:
-      - apps
-    group: "GitHub Related"
-    tags:
-      - github
-      - copilot
-      - labs
-
-  - name: "GitHub Copilot Adoption Plan - Full Solution"
-    url: "https://github.com/microsoft/github-copilot-workshops-full"
-    description: "GitHub Copilot Adoption Plan: Full solution repository — complete reference implementation accompanying the Copilot adoption curriculum."
-    categories:
-      - apps
-    group: "GitHub Related"
-    tags:
-      - github
-      - copilot
-      - solution
-
   - name: "Copilot Cost"
     url: "https://github.com/devartifex/copilot-cost"
     description: "Local-only cost tracking for the GitHub Copilot CLI — statusline + private dashboard from your OTel traces."
