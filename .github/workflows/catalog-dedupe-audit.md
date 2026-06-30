@@ -7,7 +7,7 @@ permissions:
   contents: read
   issues: read
 tools:
-  bash: ["cat", "grep", "yq", "sort", "uniq", "wc"]
+  bash: ["cat", "grep", "yq", "sort", "uniq", "wc", "date"]
   github:
     toolsets: [repos, issues]
 safe-outputs:
@@ -43,7 +43,44 @@ Review `workloads/repositories.yaml` for the following. Each check has a stable 
 7. GitHub URLs that are inaccessible, archived, private, deleted, or not in canonical `https://github.com/owner/repo` form. (`non-canonical-url` for the canonical-form problem; `inaccessible-repo` for inaccessible, archived, private, or deleted repositories.)
 8. Tags that are overly generic, duplicated within an entry, or inconsistent with nearby entries. (`generic-tags`)
 
+## Finding Identity
+
+Every finding has a stable ID of the form `check:subject`:
+
+- `check` is the stable check ID listed above (e.g. `duplicate-url`, `inaccessible-repo`, `invalid-schema`).
+- `subject` identifies what the finding is about:
+  - Use `owner/repo` (lowercase, from the canonical GitHub URL) for findings tied to one repository entry.
+  - Use a short descriptor such as `catalog` for catalog-wide or schema-level findings that are not tied to a single entry.
+
+The same finding must always produce the same ID across runs, so an acceptance keeps matching it. Examples: `duplicate-url:owner/repo`, `inaccessible-repo:owner/repo`, `invalid-schema:catalog`.
+
 ## Allowlisted Exceptions
+
+Findings can be suppressed in two ways. A finding is suppressed if it matches **either** mechanism; do not report a suppressed finding and do not count it toward the issue-creation threshold.
+
+### 1. Central allowlist (`workloads/audit-allowlist.yaml`)
+
+Read `workloads/audit-allowlist.yaml`. It contains an `accepted` list of records:
+
+```yaml
+accepted:
+  - check: duplicate-url
+    subject: "owner/repo"      # or '*' to suppress this check everywhere
+    reason: "..."
+    accepted_by: "@maintainer"
+    accepted_at: "2026-06-30"
+    until: "2026-12-31"         # optional
+```
+
+Suppress a finding when an `accepted` record matches it:
+
+- `check` equals the finding's check ID, **and**
+- `subject` equals the finding's subject (case-insensitive), or `subject` is `*` (matches any subject for that check), **and**
+- the record has not expired: either `until` is absent, or today's date (use `date +%F`) is on or before `until`.
+
+Ignore records whose `until` date is in the past — report those findings again so they can be re-reviewed.
+
+### 2. Per-entry `audit.ignore` (in `workloads/repositories.yaml`)
 
 An entry may opt out of specific checks by including an `audit` block, for example:
 
@@ -56,7 +93,7 @@ An entry may opt out of specific checks by including an `audit` block, for examp
 
 When evaluating each entry:
 
-- If a finding's check ID appears in that entry's `audit.ignore` list, **suppress the finding**: do not report it and do not count it toward the issue-creation threshold.
+- If a finding's check ID appears in that entry's `audit.ignore` list, **suppress the finding**.
 - Apply suppression per check ID only. The entry must still be flagged for any other check whose ID is not listed.
 - The `audit` block itself is valid schema. Never report it as an unexpected field under `invalid-schema`.
 - Treat a missing or empty `audit.ignore` list as "no exceptions".
@@ -72,7 +109,9 @@ The issue title should be specific, for example:
 The issue body must include:
 
 - A short summary count of findings.
-- A grouped findings table with repository name, URL, problem, and recommended fix.
+- A grouped findings table with these columns: **Finding ID** (`check:subject`), repository name, URL, problem, and recommended fix.
+- An "Accepting findings" note telling maintainers they can suppress any finding permanently by commenting on this issue:
+  `/accept <finding-id> — <reason>` (optionally `until=YYYY-MM-DD` to make it expire). Multiple IDs may be comma-separated. This records the acceptance in `workloads/audit-allowlist.yaml` so the finding is not reported again.
 - A short note that this was produced by the scheduled catalog audit.
 
 Do not create more than one issue. The `create-issue` safe output is configured to close older open issues from this same workflow, so the latest report remains canonical.

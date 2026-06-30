@@ -1,0 +1,29 @@
+# Catalog Audit Allowlist
+#
+# Accepted audit findings that the bi-weekly Catalog Dedupe Audit should stop
+# reporting. This file is the durable, reviewable record of "this is fine, do
+# not bother me again" decisions.
+#
+# How entries get here:
+#   A maintainer comments `/accept <finding-id> — <reason>` on a catalog audit
+#   issue. The Catalog Audit Accept workflow resolves the finding and appends a
+#   record below via a pull request. You can also edit this file by hand.
+#
+# How it is used:
+#   On every run, the Catalog Dedupe Audit reads this file and suppresses any
+#   finding whose `check` + `subject` matches an entry that has not expired.
+#
+# Record schema:
+#   - check:        Stable audit check ID (e.g. duplicate-url, inaccessible-repo,
+#                   non-canonical-url, invalid-schema, missing-field, empty-field,
+#                   unknown-category, group-category-mismatch, generic-tags).
+#     subject:      What the finding is about. Use `owner/repo` for repo-scoped
+#                   findings, a short descriptor (e.g. `catalog`) for catalog-wide
+#                   or schema findings, or `*` to suppress this check everywhere.
+#     reason:       Why this finding is intentionally accepted. Required.
+#     accepted_by:  GitHub handle of the maintainer who accepted it.
+#     accepted_at:  ISO date (YYYY-MM-DD) the acceptance was recorded.
+#     until:        Optional ISO date (YYYY-MM-DD). After this date the finding
+#                   is reported again so it can be re-reviewed. Omit for no expiry.
+
+accepted: []
