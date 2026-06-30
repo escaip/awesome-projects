@@ -26,4 +26,9 @@
 #     until:        Optional ISO date (YYYY-MM-DD). After this date the finding
 #                   is reported again so it can be re-reviewed. Omit for no expiry.
 
-accepted: []
+accepted:
+  - check: inaccessible-repo
+    subject: "customer-success-microsoft/service-retirements-agent"
+    reason: "private on purpose"
+    accepted_by: "@olivomarco"
+    accepted_at: "2026-06-30"
