@@ -87,6 +87,19 @@ repositories:
       - powerpoint
       - python
 
+  - name: "GitHub Copilot RVAS"
+    url: "https://github.com/microsoft/frontier-ghcp-rvas"
+    description: "Real Value Acceleration Solution for GitHub Copilot — structured challenges, learning paths, and facilitator guides to drive measurable adoption and business outcomes across your organization."
+    categories:
+      - apps
+    group: "GitHub Related"
+    tags:
+      - github
+      - copilot
+      - adoption
+      - learning-paths
+      - rvas
+
   # ── APPS · AI Related ─────────────────────────────────────────────────────
   - name: "AI Hub"
     url: "https://github.com/Azure/aihub"
