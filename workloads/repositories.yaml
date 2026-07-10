@@ -74,6 +74,21 @@ repositories:
       - token-optimization
       - best-practices
 
+  - name: "Frontier Agentic DevOps"
+    url: "https://github.com/microsoft/frontier-agentic-devops-rvas"
+    description: "One-repo GitHub Pages site with 64 hands-on challenges across five adoption journeys — GitHub Enterprise Cloud, GHAS, Agentic Workflows, and SRE Agent — designed to run against your own tenant."
+    categories:
+      - apps
+    group: "GitHub Related"
+    tags:
+      - github
+      - github-enterprise
+      - ghas
+      - agentic-workflows
+      - devops
+      - sre
+      - challenges
+
   - name: "Copilot Updates"
     url: "https://github.com/devartifex/copilot-updates"
     description: "Fetch GitHub changelog articles for any label and generate dark-themed PowerPoint presentations, powered by a Copilot skill and Python pipeline."
@@ -86,6 +101,19 @@ repositories:
       - changelog
       - powerpoint
       - python
+
+  - name: "GitHub Copilot RVAS"
+    url: "https://github.com/microsoft/frontier-ghcp-rvas"
+    description: "Real Value Acceleration Solution for GitHub Copilot — structured challenges, learning paths, and facilitator guides to drive measurable adoption and business outcomes across your organization."
+    categories:
+      - apps
+    group: "GitHub Related"
+    tags:
+      - github
+      - copilot
+      - adoption
+      - learning-paths
+      - rvas
 
   # ── APPS · AI Related ─────────────────────────────────────────────────────
   - name: "AI Hub"
@@ -162,6 +190,20 @@ repositories:
       - software-development
       - methodologies
       - frameworks
+
+  - name: "Frontier Agentic Modernization RVAS"
+    url: "https://github.com/microsoft/frontier-agentic-modernization-rvas"
+    description: "Hands-on workshop and reference architecture for modernizing applications using frontier AI agents — covers agentic workflows, infra patterns, and guided student/coach labs."
+    categories:
+      - apps
+      - infra
+    group: "AI Related"
+    tags:
+      - ai
+      - agentic
+      - modernization
+      - workshop
+      - microsoft
 
   # ── INFRA ─────────────────────────────────────────────────────────────────
   - name: "Azure SRE Demo Manager"
@@ -391,6 +433,21 @@ repositories:
       - medallion
       - workshop
       - rvas
+
+  - name: "Frontier Fabric Governance RVAS"
+   url: "https://github.com/microsoft/frontier-fabric-governance-rvas"
+   description: "Agent-assisted governance blueprint for Microsoft Fabric — codifies workspace, item, RBAC, and audit standards as declarative YAML manifests with PR-driven provisioning via GitHub Actions and Copilot-powered Fabric Skills."
+   categories:
+     - data
+   group: "Data Engineering"
+   tags:
+     - fabric
+     - governance
+     - github-actions
+     - copilot
+     - mcp
+     - iac
+     - microsoft
 
   - name: "Fabric DAX Load Test"
     url: "https://github.com/dbrownems/FabricDaxLoadTest"
