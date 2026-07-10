@@ -376,6 +376,21 @@ repositories:
         - non-canonical-url
       reason: "MCP server lives in a subdirectory of the microsoft/mcp monorepo; the subdirectory URL is intentional and is the canonical location for this specific server."
 
+  - name: "Frontier Fabric Governance RVAS"
+   url: "https://github.com/microsoft/frontier-fabric-governance-rvas"
+   description: "Agent-assisted governance blueprint for Microsoft Fabric — codifies workspace, item, RBAC, and audit standards as declarative YAML manifests with PR-driven provisioning via GitHub Actions and Copilot-powered Fabric Skills."
+   categories:
+     - data
+   group: "Data Engineering"
+   tags:
+     - fabric
+     - governance
+     - github-actions
+     - copilot
+     - mcp
+     - iac
+     - microsoft
+
   - name: "Fabric DAX Load Test"
     url: "https://github.com/dbrownems/FabricDaxLoadTest"
     description: "Load testing tool for Microsoft Fabric and Power BI semantic models. Simulates concurrent DAX queries against the XMLA endpoint using ADOMD.NET and captures per-query telemetry into Delta tables for analysis in Power BI."
