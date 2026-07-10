@@ -163,6 +163,20 @@ repositories:
       - methodologies
       - frameworks
 
+  - name: "Frontier Agentic Modernization RVAS"
+    url: "https://github.com/microsoft/frontier-agentic-modernization-rvas"
+    description: "Hands-on workshop and reference architecture for modernizing applications using frontier AI agents — covers agentic workflows, infra patterns, and guided student/coach labs."
+    categories:
+      - apps
+      - infra
+    group: "AI Related"
+    tags:
+      - ai
+      - agentic
+      - modernization
+      - workshop
+      - microsoft
+
   # ── INFRA ─────────────────────────────────────────────────────────────────
   - name: "Azure SRE Demo Manager"
     url: "https://github.com/Microsoft-Demos/Azure-SRE-Demo-Manager"
