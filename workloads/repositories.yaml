@@ -74,6 +74,21 @@ repositories:
       - token-optimization
       - best-practices
 
+  - name: "Frontier Agentic DevOps"
+    url: "https://github.com/microsoft/frontier-agentic-devops-rvas"
+    description: "One-repo GitHub Pages site with 64 hands-on challenges across five adoption journeys — GitHub Enterprise Cloud, GHAS, Agentic Workflows, and SRE Agent — designed to run against your own tenant."
+    categories:
+      - apps
+    group: "GitHub Related"
+    tags:
+      - github
+      - github-enterprise
+      - ghas
+      - agentic-workflows
+      - devops
+      - sre
+      - challenges
+
   - name: "Copilot Updates"
     url: "https://github.com/devartifex/copilot-updates"
     description: "Fetch GitHub changelog articles for any label and generate dark-themed PowerPoint presentations, powered by a Copilot skill and Python pipeline."
