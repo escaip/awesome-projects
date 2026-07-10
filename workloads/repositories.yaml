@@ -376,6 +376,22 @@ repositories:
         - non-canonical-url
       reason: "MCP server lives in a subdirectory of the microsoft/mcp monorepo; the subdirectory URL is intentional and is the canonical location for this specific server."
 
+  - name: "Frontier Fabric AgentOps RVAS"
+    url: "https://github.com/microsoft/frontier-fabric-agentops-rvas"
+    description: "Challenge-based workshop for building an AgentOps Control Tower on Microsoft Fabric — ingests and correlates telemetry from Azure AI Foundry agents into a medallion lakehouse and delivers reliability, cost, and performance dashboards via Power BI."
+    categories:
+      - data
+    group: "Data Engineering"
+    tags:
+      - fabric
+      - azure
+      - agent-ops
+      - ai-foundry
+      - observability
+      - medallion
+      - workshop
+      - rvas
+
   - name: "Fabric DAX Load Test"
     url: "https://github.com/dbrownems/FabricDaxLoadTest"
     description: "Load testing tool for Microsoft Fabric and Power BI semantic models. Simulates concurrent DAX queries against the XMLA endpoint using ADOMD.NET and captures per-query telemetry into Delta tables for analysis in Power BI."
