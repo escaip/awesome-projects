@@ -17,6 +17,7 @@ safe-outputs:
     close-older-issues: true
     max: 1
   noop:
+    report-as-issue: false
 ---
 
 # Catalog Dedupe Audit

@@ -32,6 +32,7 @@ safe-outputs:
     allowed: [agent:needs-info]
     max: 1
   noop:
+    report-as-issue: false
 ---
 
 # Catalog Onboard Repository

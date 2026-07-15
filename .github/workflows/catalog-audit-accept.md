@@ -24,6 +24,7 @@ safe-outputs:
   add-comment:
     max: 1
   noop:
+    report-as-issue: false
 ---
 
 # Catalog Audit Accept
