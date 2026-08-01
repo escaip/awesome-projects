@@ -32,3 +32,8 @@ accepted:
     reason: "private on purpose"
     accepted_by: "@olivomarco"
     accepted_at: "2026-06-30"
+  - check: generic-tags
+    subject: "microsoft/frontier-fabric-governance-rvas"
+    reason: "dupe tags"
+    accepted_by: "@olivomarco"
+    accepted_at: "2026-08-01"
