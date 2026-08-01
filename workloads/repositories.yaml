@@ -205,6 +205,21 @@ repositories:
       - workshop
       - microsoft
 
+  - name: "Frontier AI Starter Kit RVAS"
+    url: "https://github.com/microsoft/frontier-ai-starter-kit-rvas"
+    description: "Reusable customer-delivery kit for AI sessions with Microsoft Foundry — covers grounded agents, action tools, evaluation, tracing, and deployment via guided and modular hands-on activities."
+    categories:
+      - apps
+    group: "AI Related"
+    tags:
+      - ai
+      - azure-ai-foundry
+      - mcp
+      - agents
+      - workshop
+      - rvas
+      - microsoft
+
   # ── INFRA ─────────────────────────────────────────────────────────────────
   - name: "Azure SRE Demo Manager"
     url: "https://github.com/Microsoft-Demos/Azure-SRE-Demo-Manager"
