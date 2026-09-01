@@ -126,6 +126,9 @@ repositories:
       - azure
       - ai
       - demo
+      - executive-demo
+      - hands-on-labs
+      - azure-ai
 
   - name: "Audio Transcriber (React)"
     url: "https://github.com/Iditbnaya/audio-transcriber-react"
